@@ -15,4 +15,30 @@ header, footer {
 }
 h1 {
     margin-bottom: 0;
+    /* Pestañas */
+.tabs {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  padding: 10px 0 0;
+  position: sticky;
+  top: 0;
+  background: #f9f9f9;
+}
+
+.tablink {
+  border: 1px solid #ccc;
+  background: #fff;
+  padding: 8px 14px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.tablink.active {
+  border-color: #333;
+  font-weight: bold;
+}
+
+.tabcontent { display: none; }
+.tabcontent.active { display: block; }
 }
