@@ -16,6 +16,7 @@
         <button class="tablink active" data-tab="sobre-mi">Sobre mí</button>
         <button class="tablink" data-tab="servicios">Servicios</button>
         <button class="tablink" data-tab="contacto">Contacto</button>
+        <button class="tablink" data-tab="agenda">Agenda</button>
     </nav>
 
     <main>
@@ -30,13 +31,47 @@
         <!-- Pestaña: Servicios -->
         <section class="tabcontent" id="tab-servicios">
             <h2>Servicios</h2>
-            <p>Pronto encontrarás aquí el encuadre y modalidad de atención.</p>
+            <p>Atención psicológica individual en modalidad online para personas adultas. Encuadre basado en una escucha atenta y respetuosa, orientada a procesos de análisis y elaboración de síntomas, sin imposición de diagnósticos ni etiquetas.</p>
+            <p>Modalidad: Google Meet · Duración por sesión: 60 minutos · Frecuencia: semanal o a convenir. Se emite boleta de honorarios.</p>
+            <p>Ámbitos frecuentes de consulta: angustia, duelo, crisis vitales, relaciones, síntomas ligados al cuerpo, inhibiciones, compulsiones y conflictos con el deseo. El trabajo se sostiene en el tiempo para favorecer movimientos subjetivos estables.</p>
+            <p><strong>Valor por sesión:</strong> $10.000 CLP. <strong>Confirmación:</strong> mediante pago previo por transferencia.</p>
+            <p><strong>Requisitos del encuentro online:</strong> espacio privado y sin interrupciones, conexión estable a internet y dispositivo con cámara y micrófono en buen funcionamiento.</p>
         </section>
 
         <!-- Pestaña: Contacto -->
         <section class="tabcontent" id="tab-contacto">
             <h2>Contacto</h2>
-            <p>Puedes escribirme a: <a href="mailto:tu-correo@ejemplo.com">tu-correo@ejemplo.com</a></p>
+            <p>Correo: <a href="mailto:v.sandoval.18@gmail.com">v.sandoval.18@gmail.com</a></p>
+            <p>Registro Nacional de Prestadores de Salud (RNS): N° 881427</p>
+            <p>Horario de atención: a convenir según disponibilidad.</p>
+            <p>Si prefieres, puedes ir directo a reservar un horario en la pestaña <em>Agenda</em>.</p>
+        </section>
+
+        <!-- Pestaña: Agenda -->
+        <section class="tabcontent" id="tab-agenda">
+            <h2>Agenda</h2>
+
+            <h3>1) Encadre y condiciones</h3>
+            <p>Lea con atención las condiciones mínimas del encuentro clínico online: espacio privado y sin interrupciones; conexión estable; Google Meet como plataforma; la sesión se confirma con pago previo; el trabajo es estrictamente clínico (no asistencial); se sugiere una frecuencia mínima de dos sesiones mensuales.</p>
+
+            <h3>2) Pago previo por transferencia</h3>
+            <p><strong>Valor por sesión:</strong> $10.000 CLP</p>
+            <p><strong>Datos de transferencia:</strong><br>
+                Nombre: VICTOR FELIPE SANDOVAL<br>
+                RUT: 17.673.053-6<br>
+                Banco: Scotiabank · Cuenta Corriente N° 985982511<br>
+                Correo asociado: v.sandoval.18@gmail.com
+            </p>
+            <p>Tras realizar la transferencia, conserve el comprobante. Se solicitará en el formulario de ingreso.</p>
+
+            <h3>3) Reservar horario</h3>
+            <p><a href="https://calendar.app.google/dQKob1ggiH3iBzZz9" target="_blank" rel="noopener">Abrir agenda de horarios (Google Calendar App)</a></p>
+
+            <h3>4) Completar formulario de ingreso</h3>
+            <p>Complete los datos básicos para formalizar el ingreso y adjunte el comprobante de pago.</p>
+            <p><a href="https://forms.gle/H3sKc87ch3qW783m7" target="_blank" rel="noopener">Abrir formulario de ingreso</a></p>
+
+            <p><em>Nota:</em> La reserva queda confirmada cuando se han completado los pasos 2 a 4. Si encuentra algún inconveniente, escríbame a <a href="mailto:v.sandoval.18@gmail.com">v.sandoval.18@gmail.com</a>.</p>
         </section>
     </main>
 
@@ -49,7 +84,8 @@
         const tabs = {
             'sobre-mi': document.getElementById('tab-sobre-mi'),
             'servicios': document.getElementById('tab-servicios'),
-            'contacto': document.getElementById('tab-contacto')
+            'contacto': document.getElementById('tab-contacto'),
+            'agenda': document.getElementById('tab-agenda')
         };
 
         buttons.forEach(btn => {
