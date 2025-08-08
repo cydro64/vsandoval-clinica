@@ -6,6 +6,25 @@
     <title>Victor Sandoval - Psicólogo</title>
     <link rel="stylesheet" href="style.css">
 </head>
+    <script>
+  const buttons = document.querySelectorAll('.tablink');
+  const tabs = {
+    'sobre-mi': document.getElementById('tab-sobre-mi'),
+    'servicios': document.getElementById('tab-servicios'),
+    'contacto': document.getElementById('tab-contacto')
+  };
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      Object.values(tabs).forEach(t => t.classList.remove('active'));
+
+      btn.classList.add('active');
+      const key = btn.dataset.tab;
+      tabs[key].classList.add('active');
+    });
+  });
+</script>
 <body>
     <header>
         <h1>Victor Sandoval</h1>
