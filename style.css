@@ -6,12 +6,12 @@
   --wa:#1ebe5a;            /* color WhatsApp */
 }
 
-*{box-sizing:border-box}
-
-html,body{height:100%}
+*{ box-sizing: border-box; }
+html,body{ height:100%; }
 
 body{
-  font-family: Arial, sans-serif;
+  /* Roboto (desde Google Fonts en tu index.html) */
+  font-family: Roboto, system-ui, -apple-system, Segoe UI, Arial, sans-serif;
   line-height: 1.6;
   color: var(--fg);
   background: var(--bg);
@@ -26,9 +26,9 @@ footer{
   padding: 10px 0;
 }
 
-h1{ margin: 0 0 4px 0; }
-h2{ margin: 16px 0 8px; }
-h3{ margin: 14px 0 6px; }
+h1{ margin: 0 0 4px 0; font-weight:700; }
+h2{ margin: 16px 0 8px; font-weight:700; }
+h3{ margin: 14px 0 6px;  font-weight:500; }
 
 p{ margin: 10px 0; }
 ul,ol{ margin: 10px 0 10px 24px; }
@@ -44,8 +44,33 @@ footer p{
   opacity: 0.8;
 }
 
-/* Suaviza la negrita si la uses puntualmente */
+/* Suaviza la negrita si la usas puntualmente */
 strong{ font-weight: 600; }
+
+/* ===== Material Symbols (iconos) ===== */
+.material-symbols-outlined{
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+  font-size: 24px;
+  line-height: 1;
+  vertical-align: -6px; /* alinear con el texto */
+}
+.icon-18{ font-size:18px; }
+.icon-24{ font-size:24px; }
+.icon-36{ font-size:36px; }
+.icon-48{ font-size:48px; }
+
+/* ===== Logo (si lo usas en el header) ===== */
+.logo{
+  display:block;
+  width:140px;
+  max-width:40vw;
+  height:auto;
+  margin:0 auto 12px;
+}
 
 /* ========= Pestañas ========= */
 .tabs{
@@ -73,7 +98,7 @@ strong{ font-weight: 600; }
 
 .tablink.active{
   border-color: #333;
-  font-weight: bold;
+  font-weight: 700;
   background: #eaeaea;
   box-shadow: 0 1px 0 rgba(0,0,0,.04) inset;
 }
@@ -108,7 +133,7 @@ a:focus-visible{
   padding:12px 16px;
   border:1px solid var(--border);
   border-radius:12px;
-  text-decoration:none;
+  text-decoration:none;    /* sin subrayado dentro de cards */
   color:inherit;
   background:#fff;
   margin:10px 0;
@@ -125,26 +150,13 @@ a:focus-visible{
   border-color: color-mix(in srgb, var(--wa) 40%, transparent);
   background: color-mix(in srgb, var(--wa) 12%, #fff);
 }
-.whatsapp-card:hover{
-  border-color: var(--wa);
-}
+.whatsapp-card:hover{ border-color: var(--wa); }
 
 .card .icon{
-  width:36px;
-  height:36px;
-  display:grid;
-  place-items:center;
+  width:36px; height:36px;
+  display:grid; place-items:center;
 }
-.card .icon svg{
-  width:28px;
-  height:28px;
-  fill: var(--wa);
-}
-.card .text{
-  display:flex;
-  flex-direction:column;
-  line-height:1.2;
-}
-.card .text small{
-  opacity:.75;
-}
+.card .icon svg{ width:28px; height:28px; fill: var(--wa); }
+.card .text{ display:flex; flex-direction:column; line-height:1.2; }
+.card .text small{ opacity:.75; }
+
