@@ -3,6 +3,7 @@
   --bg:#f9f9f9;
   --fg:#333;
   --border:#ccc;
+  --wa:#1ebe5a;            /* color WhatsApp */
 }
 
 *{box-sizing:border-box}
@@ -43,7 +44,7 @@ footer p{
   opacity: 0.8;
 }
 
-/* Suaviza la negrita si la usas puntualmente */
+/* Suaviza la negrita si la uses puntualmente */
 strong{ font-weight: 600; }
 
 /* ========= Pestañas ========= */
@@ -97,4 +98,53 @@ a:focus-visible{
 /* Respeto a reduce motion */
 @media (prefers-reduced-motion: reduce){
   .tablink{ transition: none; }
+}
+
+/* ========= Cards / Botones tipo Linktree ========= */
+.card{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:12px 16px;
+  border:1px solid var(--border);
+  border-radius:12px;
+  text-decoration:none;
+  color:inherit;
+  background:#fff;
+  margin:10px 0;
+  transition:transform .08s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease;
+}
+.card:hover{
+  transform: translateY(-1px);
+  box-shadow:0 2px 10px rgba(0,0,0,.06);
+  border-color:#bbb;
+}
+
+/* WhatsApp */
+.whatsapp-card{
+  border-color: color-mix(in srgb, var(--wa) 40%, transparent);
+  background: color-mix(in srgb, var(--wa) 12%, #fff);
+}
+.whatsapp-card:hover{
+  border-color: var(--wa);
+}
+
+.card .icon{
+  width:36px;
+  height:36px;
+  display:grid;
+  place-items:center;
+}
+.card .icon svg{
+  width:28px;
+  height:28px;
+  fill: var(--wa);
+}
+.card .text{
+  display:flex;
+  flex-direction:column;
+  line-height:1.2;
+}
+.card .text small{
+  opacity:.75;
 }
