@@ -49,6 +49,10 @@ strong{ font-weight: 600; }
 
 /* ===== Material Symbols (iconos) ===== */
 .material-symbols-outlined{
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
   font-variation-settings:
     'FILL' 0,
     'wght' 400,
@@ -159,4 +163,3 @@ a:focus-visible{
 .card .icon svg{ width:28px; height:28px; fill: var(--wa); }
 .card .text{ display:flex; flex-direction:column; line-height:1.2; }
 .card .text small{ opacity:.75; }
-
