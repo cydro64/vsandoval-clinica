@@ -73,6 +73,32 @@ a{
   text-underline-offset: 2px;
 }
 
+.action-link{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--surface-strong);
+  color: var(--fg);
+  text-decoration: none;
+  font-weight: 500;
+}
+.action-link:hover{
+  border-color: var(--accent);
+  background: var(--surface);
+}
+.action-link:focus-visible{
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+.action-link::after{
+  content: "↗";
+  font-size: 0.95em;
+  opacity: 0.8;
+}
+
 footer p{
   font-size: 0.95rem;
   color: var(--fg-muted);
@@ -139,8 +165,10 @@ strong{ font-weight: 600; }
 }
 
 .tablink.active{
+  border-color: var(--accent);
   border-color: color-mix(in srgb, var(--accent) 70%, var(--border));
   font-weight: 700;
+  background: var(--surface-strong);
   background: color-mix(in srgb, var(--accent) 18%, var(--surface));
   box-shadow: 0 0 0 1px rgba(118,167,255,.25), 0 6px 16px rgba(0,0,0,.2);
   position: relative;
@@ -201,12 +229,15 @@ a:focus-visible,
 .card:hover{
   transform: translateY(-1px);
   box-shadow:0 10px 20px rgba(0,0,0,.25);
+  border-color: var(--accent);
   border-color: color-mix(in srgb, var(--accent) 40%, var(--border));
 }
 
 /* WhatsApp */
 .whatsapp-card{
+  border-color: var(--wa);
   border-color: color-mix(in srgb, var(--wa) 40%, transparent);
+  background: var(--surface);
   background: color-mix(in srgb, var(--wa) 12%, var(--surface));
 }
 .whatsapp-card:hover{ border-color: var(--wa); }
