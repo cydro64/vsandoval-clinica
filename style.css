@@ -1,8 +1,21 @@
 /* ========= Base ========= */
 :root{
-  --bg:#f9f9f9;
-  --fg:#333;
-  --border:#ccc;
+  /* ===== Paleta clínica dark mode =====
+     Fondo: #11161c (oscuro suave)
+     Superficie/Card: #1a2230 (ligeramente más claro)
+     Superficie elevada: #1f2a3a
+     Texto principal: #e7edf5
+     Texto secundario: #b1bdcc
+     Borde: #2a3545
+     Acento suave: #76a7ff
+  */
+  --bg:#11161c;
+  --surface:#1a2230;
+  --surface-strong:#1f2a3a;
+  --fg:#e7edf5;
+  --fg-muted:#b1bdcc;
+  --border:#2a3545;
+  --accent:#76a7ff;
   --wa:#1ebe5a;            /* color WhatsApp */
 }
 
@@ -12,36 +25,57 @@ html,body{ height:100%; }
 body{
   /* Roboto (desde Google Fonts en tu index.html) */
   font-family: Roboto, system-ui, -apple-system, Segoe UI, Arial, sans-serif;
-  line-height: 1.6;
+  line-height: 1.7;
   color: var(--fg);
   background: var(--bg);
-  max-width: 800px;
+  margin: 0;
+  padding: 32px 20px 48px;
+}
+
+.page{
+  max-width: 960px;
   margin: 0 auto;
-  padding: 20px;
 }
 
 header,
 footer{
   text-align: center;
-  padding: 10px 0;
+  padding: 16px 0;
 }
 
-h1{ margin: 0 0 4px 0; font-weight:700; }
-h2{ margin: 16px 0 8px; font-weight:700; }
-h3{ margin: 14px 0 6px;  font-weight:500; }
+h1{
+  margin: 0 0 6px 0;
+  font-weight: 700;
+  font-size: clamp(2rem, 3vw, 2.6rem);
+  letter-spacing: 0.3px;
+}
+h2{
+  margin: 0 0 12px;
+  font-weight: 700;
+  font-size: clamp(1.4rem, 2.2vw, 1.7rem);
+}
+h3{
+  margin: 18px 0 8px;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
 
-p{ margin: 10px 0; }
+p{
+  margin: 12px 0;
+  color: var(--fg);
+  font-size: 1rem;
+}
 ul,ol{ margin: 10px 0 10px 24px; }
 
 a{
-  color: inherit;
+  color: var(--accent);
   text-decoration: underline;
   text-underline-offset: 2px;
 }
 
 footer p{
   font-size: 0.95rem;
-  opacity: 0.8;
+  color: var(--fg-muted);
 }
 
 /* Suaviza la negrita si la usas puntualmente */
@@ -81,36 +115,56 @@ strong{ font-weight: 600; }
   display: flex;
   gap: 8px;
   justify-content: center;
-  padding-top: 10px;
+  padding: 14px 0 10px;
   position: sticky;
   top: 0;
-  background: var(--bg);
+  background: linear-gradient(180deg, rgba(17,22,28,0.98), rgba(17,22,28,0.92));
   z-index: 10;
   border-bottom: 1px solid var(--border);
 }
 
 .tablink{
   border: 1px solid var(--border);
-  background: #fff;
+  background: var(--surface);
+  color: var(--fg);
   padding: 10px 16px;
   cursor: pointer;
-  border-radius: 8px;
-  transition: background .2s, border-color .2s, box-shadow .2s;
+  border-radius: 12px;
+  transition: background .2s, border-color .2s, box-shadow .2s, transform .2s;
 }
 
-.tablink:hover{ background:#f0f0f0; }
+.tablink:hover{
+  background: var(--surface-strong);
+  transform: translateY(-1px);
+}
 
 .tablink.active{
-  border-color: #333;
+  border-color: color-mix(in srgb, var(--accent) 70%, var(--border));
   font-weight: 700;
-  background: #eaeaea;
-  box-shadow: 0 1px 0 rgba(0,0,0,.04) inset;
+  background: color-mix(in srgb, var(--accent) 18%, var(--surface));
+  box-shadow: 0 0 0 1px rgba(118,167,255,.25), 0 6px 16px rgba(0,0,0,.2);
+  position: relative;
+}
+.tablink.active::after{
+  content: "";
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 6px;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--accent);
 }
 
 /* ========= Contenido de pestañas ========= */
 .tabcontent{
   display: none;           /* oculto por defecto */
-  margin-top: 16px;
+  margin: 24px 0 0;
+  padding: 28px 30px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0,0,0,.25);
 }
 
 .tabcontent.active{
@@ -119,9 +173,10 @@ strong{ font-weight: 600; }
 
 /* ========= Accesibilidad ========= */
 .tablink:focus-visible,
-a:focus-visible{
-  outline: 2px solid #333;
-  outline-offset: 2px;
+a:focus-visible,
+.card:focus-visible{
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
 }
 
 /* Respeto a reduce motion */
@@ -134,25 +189,25 @@ a:focus-visible{
   display:flex;
   align-items:center;
   gap:12px;
-  padding:12px 16px;
+  padding:14px 18px;
   border:1px solid var(--border);
-  border-radius:12px;
+  border-radius:16px;
   text-decoration:none;    /* sin subrayado dentro de cards */
   color:inherit;
-  background:#fff;
-  margin:10px 0;
+  background: var(--surface-strong);
+  margin:12px 0;
   transition:transform .08s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease;
 }
 .card:hover{
   transform: translateY(-1px);
-  box-shadow:0 2px 10px rgba(0,0,0,.06);
-  border-color:#bbb;
+  box-shadow:0 10px 20px rgba(0,0,0,.25);
+  border-color: color-mix(in srgb, var(--accent) 40%, var(--border));
 }
 
 /* WhatsApp */
 .whatsapp-card{
   border-color: color-mix(in srgb, var(--wa) 40%, transparent);
-  background: color-mix(in srgb, var(--wa) 12%, #fff);
+  background: color-mix(in srgb, var(--wa) 12%, var(--surface));
 }
 .whatsapp-card:hover{ border-color: var(--wa); }
 
@@ -162,4 +217,31 @@ a:focus-visible{
 }
 .card .icon svg{ width:28px; height:28px; fill: var(--wa); }
 .card .text{ display:flex; flex-direction:column; line-height:1.2; }
-.card .text small{ opacity:.75; }
+.card .text small{ color: var(--fg-muted); }
+
+main{
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+header p{
+  margin: 0;
+  color: var(--fg-muted);
+  font-size: 1.05rem;
+}
+
+@media (max-width: 720px){
+  body{
+    padding: 24px 16px 40px;
+  }
+
+  .tabcontent{
+    padding: 22px;
+    border-radius: 16px;
+  }
+
+  .tabs{
+    flex-wrap: wrap;
+  }
+}
