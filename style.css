@@ -43,6 +43,10 @@ footer{
   padding: 16px 0;
 }
 
+header{
+  padding-top: 72px;
+}
+
 h1{
   margin: 0 0 6px 0;
   font-weight: 700;
@@ -64,6 +68,7 @@ p{
   margin: 12px 0;
   color: var(--fg);
   font-size: 1rem;
+  text-align: justify;
 }
 ul,ol{ margin: 10px 0 10px 24px; }
 
@@ -137,6 +142,52 @@ strong{ font-weight: 600; }
   max-width:40vw;
   height:auto;
   margin:0 auto 12px;
+}
+
+/* ========= Portada estilo Facebook ========= */
+.cover{
+  position: relative;
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 14px 32px rgba(0,0,0,.28);
+}
+
+.cover-banner{
+  position: relative;
+  height: 240px;
+  background-image: url("docs/imagenportada.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.cover-banner::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(17,22,28,0) 58%, var(--bg) 100%);
+}
+
+.cover-avatar-wrap{
+  position: absolute;
+  left: 50%;
+  bottom: -56px;
+  transform: translateX(-50%);
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  box-shadow: 0 12px 24px rgba(0,0,0,.35);
+  display: grid;
+  place-items: center;
+}
+
+.cover-avatar{
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 /* ========= Pestañas ========= */
@@ -248,6 +299,27 @@ strong{ font-weight: 600; }
   text-decoration: underline;
 }
 
+.agenda-cards{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.agenda-card{
+  padding: 22px;
+  border-radius: 18px;
+  background: var(--surface-strong);
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 24px rgba(0,0,0,.25);
+}
+
+.agenda-actions{
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
 /* ========= Accesibilidad ========= */
 .tablink:focus-visible,
 a:focus-visible,
@@ -340,7 +412,10 @@ main{
   flex-direction: column;
   gap: 12px;
   z-index: 1;
+codex/implement-modal-pdf-viewer-in-index.html-zhipmr
   overflow: hidden;
+=======
+main
 }
 
 .modal__header{
@@ -376,12 +451,17 @@ main{
 
 .modal iframe{
   width: 100%;
+ codex/implement-modal-pdf-viewer-in-index.html-zhipmr
   height: 100%;
+=======
+  height: 70vh;
+ main
   border: none;
   border-radius: 14px;
   background: #fff;
 }
 
+ codex/implement-modal-pdf-viewer-in-index.html-zhipmr
 .modal__body{
   flex: 1;
   min-height: 0;
@@ -402,6 +482,8 @@ main{
   }
 }
 
+=======
+ main
 .whatsapp-float{
   position: fixed;
   right: 24px;
@@ -454,6 +536,29 @@ header p{
     padding: 24px 16px 40px;
   }
 
+  header{
+    padding-top: 60px;
+  }
+
+  .cover{
+    border-radius: 22px;
+  }
+
+  .cover-banner{
+    height: 190px;
+  }
+
+  .cover-avatar-wrap{
+    bottom: -44px;
+    width: 110px;
+    height: 110px;
+  }
+
+  .cover-avatar{
+    width: 98px;
+    height: 98px;
+  }
+
   .tabcontent{
     padding: 22px;
     border-radius: 16px;
@@ -472,5 +577,14 @@ header p{
 
   .whatsapp-float__text{
     display: none;
+  }
+
+  .agenda-cards{
+    grid-template-columns: 1fr;
+  }
+
+  .agenda-actions{
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
