@@ -36,6 +36,7 @@ body{
 .page{
   max-width: 960px;
   margin: 0 auto;
+  padding-bottom: 140px;
 }
 
 header,
@@ -505,14 +506,16 @@ main{
 
 .floating-actions{
   position: fixed;
-  right: 24px;
+  left: 50%;
   bottom: 24px;
+  width: min(960px, calc(100% - 48px));
+  transform: translateX(-50%);
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 12px;
   z-index: 9999;
   flex-wrap: wrap;
-  justify-content: flex-end;
 }
 
 .floating-button{
@@ -544,10 +547,24 @@ main{
   font-weight: 500;
 }
 
+.calendar-float{
+  background: #ffffff;
+  color: #202124;
+  border: 1px solid #dadce0;
+  font-weight: 500;
+  box-shadow: 0 2px 6px rgba(0,0,0,.18);
+}
+
 .form-float:hover{
   transform: translateY(-1px);
   background: color-mix(in srgb, var(--form) 86%, #ffffff);
   box-shadow: 0 12px 28px rgba(0,0,0,.38);
+}
+
+.calendar-float:hover{
+  transform: translateY(-1px);
+  background: #f8f9fa;
+  box-shadow: 0 4px 10px rgba(0,0,0,.2);
 }
 
 .whatsapp-float:focus-visible{
@@ -560,6 +577,11 @@ main{
   outline-offset: 4px;
 }
 
+.calendar-float:focus-visible{
+  outline: 3px solid rgba(26,115,232,.45);
+  outline-offset: 4px;
+}
+
 .whatsapp-float__icon{
   width: 24px;
   height: 24px;
@@ -568,6 +590,15 @@ main{
 }
 
 .form-float__icon{
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.calendar-float__icon{
   width: 24px;
   height: 24px;
   display: grid;
@@ -631,10 +662,9 @@ header p{
   }
 
   .floating-actions{
-    right: 16px;
+    width: min(960px, calc(100% - 32px));
     bottom: 16px;
-    flex-direction: column;
-    align-items: flex-end;
+    justify-content: center;
   }
 
   .floating-button{
@@ -643,6 +673,7 @@ header p{
   }
 
   .whatsapp-float__text,
+  .calendar-float__text,
   .form-float__text{
     display: none;
   }
