@@ -512,8 +512,8 @@ main{
   transform: translateX(-50%);
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 12px;
+  justify-content: flex-end;
+  gap: 14px;
   z-index: 9999;
   flex-wrap: wrap;
 }
@@ -664,7 +664,7 @@ header p{
   .floating-actions{
     width: min(960px, calc(100% - 32px));
     bottom: 16px;
-    justify-content: center;
+    justify-content: flex-end;
   }
 
   .floating-button{
