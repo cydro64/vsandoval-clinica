@@ -17,6 +17,7 @@
   --border:#2a3545;
   --accent:#76a7ff;
   --wa:#1ebe5a;            /* color WhatsApp */
+  --form:#1a73e8;          /* Google Form blue */
 }
 
 *{ box-sizing: border-box; }
@@ -502,22 +503,34 @@ main{
   }
 }
 
-.whatsapp-float{
+.floating-actions{
   position: fixed;
   right: 24px;
   bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 9999;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.floating-button{
   display: inline-flex;
   align-items: center;
   gap: 10px;
   padding: 12px 18px;
   border-radius: 999px;
-  background: var(--wa);
-  color: #0b1a12;
   text-decoration: none;
   font-weight: 600;
   box-shadow: 0 10px 24px rgba(0,0,0,.35);
-  z-index: 9999;
-  transition: transform .15s ease, box-shadow .2s ease;
+  transition: transform .15s ease, box-shadow .2s ease, background .2s ease;
+}
+
+.whatsapp-float{
+  background: var(--wa);
+  color: #0b1a12;
+  text-decoration: none;
 }
 
 .whatsapp-float:hover{
@@ -525,8 +538,25 @@ main{
   box-shadow: 0 12px 28px rgba(0,0,0,.4);
 }
 
+.form-float{
+  background: var(--form);
+  color: #fff;
+  font-weight: 500;
+}
+
+.form-float:hover{
+  transform: translateY(-1px);
+  background: color-mix(in srgb, var(--form) 86%, #ffffff);
+  box-shadow: 0 12px 28px rgba(0,0,0,.38);
+}
+
 .whatsapp-float:focus-visible{
   outline: 3px solid color-mix(in srgb, var(--wa) 70%, #ffffff);
+  outline-offset: 4px;
+}
+
+.form-float:focus-visible{
+  outline: 3px solid color-mix(in srgb, var(--form) 70%, #ffffff);
   outline-offset: 4px;
 }
 
@@ -535,6 +565,15 @@ main{
   height: 24px;
   display: grid;
   place-items: center;
+}
+
+.form-float__icon{
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+  font-size: 24px;
+  line-height: 1;
 }
 
 .whatsapp-float__icon svg{
@@ -591,14 +630,20 @@ header p{
     flex-wrap: wrap;
   }
 
-  .whatsapp-float{
+  .floating-actions{
     right: 16px;
     bottom: 16px;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .floating-button{
     padding: 10px 12px;
     gap: 8px;
   }
 
-  .whatsapp-float__text{
+  .whatsapp-float__text,
+  .form-float__text{
     display: none;
   }
 
