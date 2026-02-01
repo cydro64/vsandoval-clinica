@@ -64,6 +64,7 @@ p{
   margin: 12px 0;
   color: var(--fg);
   font-size: 1rem;
+  text-align: justify;
 }
 ul,ol{ margin: 10px 0 10px 24px; }
 
@@ -246,6 +247,27 @@ strong{ font-weight: 600; }
   outline: 2px solid var(--accent);
   outline-offset: 3px;
   text-decoration: underline;
+}
+
+.agenda-cards{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.agenda-card{
+  padding: 22px;
+  border-radius: 18px;
+  background: var(--surface-strong);
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 24px rgba(0,0,0,.25);
+}
+
+.agenda-actions{
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+  flex-wrap: wrap;
 }
 
 /* ========= Accesibilidad ========= */
@@ -451,5 +473,14 @@ header p{
 
   .whatsapp-float__text{
     display: none;
+  }
+
+  .agenda-cards{
+    grid-template-columns: 1fr;
+  }
+
+  .agenda-actions{
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
