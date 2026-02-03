@@ -1,14 +1,21 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-CL">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Víctor Sandoval | Psicólogo online</title>
-  <meta name="description" content="Atención psicológica online para personas adultas. Agenda tu horario, completa el formulario de ingreso y recibe confirmación por correo o WhatsApp." />
-  <meta property="og:title" content="Víctor Sandoval | Psicólogo online" />
-  <meta property="og:description" content="Atención psicológica online para personas adultas. Agenda tu horario, completa el formulario de ingreso y recibe confirmación por correo o WhatsApp." />
+  <!-- 4.1 Title y meta description optimizados -->
+  <title>Psicoterapia online en Chile | Víctor Sandoval</title>
+  <meta name="description" content="Psicoterapia individual online para personas adultas en Chile. Agenda tu hora, completa el formulario de ingreso y recibe confirmación por correo o WhatsApp." />
+  <!-- 4.2 Open Graph -->
+  <meta property="og:title" content="Psicoterapia online en Chile | Víctor Sandoval" />
+  <meta property="og:description" content="Psicoterapia individual online para personas adultas. Agenda tu hora y recibe confirmación por correo o WhatsApp." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://cydro64.github.io/tuusuario.github.io/" />
+  <meta property="og:image" content="https://cydro64.github.io/tuusuario.github.io/docs/imagenportada.jpg" />
+  <meta property="og:locale" content="es_CL" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://cydro64.github.io/tuusuario.github.io/" />
+  <!-- 4.3 lang es-CL y jerarquía H1/H2/H3 aplicada en el contenido -->
 
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
 
@@ -17,11 +24,26 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
-  <!-- Material Symbols (iconos de Material Design) -->
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet">
-
   <!-- CSS (con cache-busting) -->
   <link rel="stylesheet" href="style.css" />
+
+  <!-- 4.6 Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Víctor Sandoval",
+    "url": "https://cydro64.github.io/tuusuario.github.io/",
+    "areaServed": "CL",
+    "serviceType": "Psicoterapia online",
+    "description": "Psicoterapia individual online para personas adultas en Chile.",
+    "provider": {
+      "@type": "Person",
+      "name": "Víctor Sandoval",
+      "jobTitle": "Psicólogo"
+    }
+  }
+  </script>
 </head>
 <body>
   <div class="page">
@@ -29,116 +51,281 @@
       <div class="cover-media">
         <div class="cover-banner" role="img" aria-label="Imagen de portada"></div>
         <div class="cover-avatar-wrap">
-          <img class="cover-avatar" src="docs/logo.jpg" alt="Logo de Víctor Sandoval" />
+          <!-- 4.5 Optimización de imágenes -->
+          <img class="cover-avatar" src="docs/logo.jpg" alt="Logo de Víctor Sandoval" width="128" height="128" loading="eager" decoding="async" />
         </div>
       </div>
       <div class="cover-info">
+        <!-- 0.1 Nombre unificado en encabezado -->
         <h1 class="cover-name">Víctor Sandoval</h1>
         <p class="cover-role">Psicólogo</p>
+        <!-- 0.7 CTA visibles en el primer pantallazo -->
+        <!-- 0.5 Enlaces externos con target="_blank" rel="noopener noreferrer" -->
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="https://calendar.app.google/dQKob1ggiH3iBzZz9" target="_blank" rel="noopener noreferrer" data-track="click_agenda">Agendar</a>
+          <a class="btn btn-secondary" href="https://wa.me/56976449957?text=Hola%20Víctor,%20quisiera%20consultar%20por%20una%20sesión%20online." target="_blank" rel="noopener noreferrer" data-track="click_whatsapp">WhatsApp</a>
+        </div>
       </div>
     </section>
 
-    <nav class="tabs" role="tablist" aria-label="Secciones principales">
-      <button class="tablink active" data-tab="terapia-online" id="tab-terapia-online-button" role="tab" aria-selected="true" aria-controls="tab-terapia-online" tabindex="0">Terapia online</button>
-      <button class="tablink" data-tab="agenda" id="tab-agenda-button" role="tab" aria-selected="false" aria-controls="tab-agenda" tabindex="-1">Agenda</button>
-      <button class="tablink" data-tab="contacto" id="tab-contacto-button" role="tab" aria-selected="false" aria-controls="tab-contacto" tabindex="-1">Contacto</button>
-      <button class="tablink" data-tab="sobre-mi" id="tab-sobre-mi-button" role="tab" aria-selected="false" aria-controls="tab-sobre-mi" tabindex="-1">Sobre mí</button>
-      <button class="tablink" data-tab="servicios" id="tab-servicios-button" role="tab" aria-selected="false" aria-controls="tab-servicios" tabindex="-1">Servicios</button>
+    <!-- 3.5 Navegación con anchors y sección activa -->
+    <nav class="main-nav" aria-label="Secciones principales">
+      <a class="nav-link active" href="#terapia-online">Terapia online</a>
+      <a class="nav-link" href="#como-funciona">Cómo funciona</a>
+      <a class="nav-link" href="#agenda">Agenda</a>
+      <a class="nav-link" href="#faq">Preguntas frecuentes</a>
+      <a class="nav-link" href="#servicios">Servicios</a>
+      <a class="nav-link" href="#sobre-mi">Sobre mí</a>
+      <a class="nav-link" href="#privacidad">Privacidad</a>
+      <a class="nav-link" href="#contacto">Contacto</a>
     </nav>
 
     <main>
-      <!-- Pestaña: Terapia online -->
-      <section class="tabcontent active" id="tab-terapia-online" role="tabpanel" aria-labelledby="tab-terapia-online-button" tabindex="-1">
+      <!-- 3.1 Jerarquía tipográfica y espaciados -->
+      <section class="section hero-section" id="terapia-online">
         <div class="hero-card">
-          <h2>Terapia psicológica individual online para personas adultas</h2>
-          <p>Ofrezco un espacio de escucha y trabajo clínico orientado a la elaboración del malestar, sin imponer diagnósticos ni etiquetas, con una atención respetuosa de la singularidad. Las sesiones se realizan por videollamada, con una duración de 60 minutos y una frecuencia semanal o a convenir según disponibilidad. Si deseas avanzar, puedes agendar un horario; si prefieres escribir antes, puedes contactarme; y si quieres saber un poco más de mí, puedes revisar la sección “Sobre mí”.</p>
-          <div class="chip-group">
-            <a class="chip-link" href="#agenda">Agendar</a>
-            <a class="chip-link" href="#contacto">Contacto</a>
-            <a class="chip-link" href="#sobre-mi">Sobre mí</a>
+          <!-- 1.1 Hero con propuesta clara -->
+          <h2>Terapia psicológica online para personas adultas</h2>
+          <p>Te acompaño en procesos de psicoterapia individual, en modalidad online, para elaborar el malestar con una escucha clínica respetuosa. Sesiones de 60 minutos por videollamada, con valor accesible y seguimiento profesional.</p>
+          <p class="hero-value"><strong>Valor por sesión:</strong> $10.000 CLP · Online vía Google Meet.</p>
+          <!-- 5.3 Aviso de urgencias antes de agendar -->
+          <p class="hero-alert"><strong>Urgencias:</strong> si estás en riesgo inmediato o crisis severa, acude a un servicio de urgencia local antes de agendar.</p>
+          <!-- 1.2 Estilo único de botones -->
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://calendar.app.google/dQKob1ggiH3iBzZz9" target="_blank" rel="noopener noreferrer" data-track="click_agenda">Agendar</a>
+            <a class="btn btn-secondary" href="https://wa.me/56976449957?text=Hola%20Víctor,%20quisiera%20consultar%20por%20una%20sesión%20online." target="_blank" rel="noopener noreferrer" data-track="click_whatsapp">WhatsApp</a>
+          </div>
+          <!-- 1.6 Disponibilidad referencial -->
+          <p class="hero-availability">Disponibilidad referencial: lunes a viernes, 09:00–20:00 hrs (Chile).</p>
+          <!-- 1.7 Microcopy bajo CTA -->
+          <p class="hero-microcopy">Respondo en 24–48 horas hábiles. La reserva se confirma con pago previo por transferencia.</p>
+        </div>
+      </section>
+
+      <section class="section" id="como-funciona">
+        <h2>Cómo funciona</h2>
+        <!-- 1.3 Cómo funciona en 3 pasos -->
+        <div class="steps">
+          <div class="steps-grid">
+            <div class="step-card">
+              <span class="step-number">1</span>
+              <p>Elige un horario disponible en la agenda online.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">2</span>
+              <p>Completa el formulario de ingreso con tus datos básicos.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">3</span>
+              <p>Recibe la confirmación con indicaciones de pago y enlace de sesión.</p>
+            </div>
+          </div>
+          <!-- 1.4 Botones Agenda + Formulario con flujo -->
+          <div class="flow-actions">
+            <div>
+              <p class="flow-text">En 3 clics quedas listo: agenda tu hora, completa el formulario y espera la confirmación.</p>
+            </div>
+            <div class="flow-buttons">
+              <a class="btn btn-primary" href="https://calendar.app.google/dQKob1ggiH3iBzZz9" target="_blank" rel="noopener noreferrer" data-track="click_agenda">Agenda</a>
+              <a class="btn btn-secondary" href="https://forms.gle/H3sKc87ch3qW783m7" target="_blank" rel="noopener noreferrer" data-track="click_form">Formulario</a>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- Pestaña: Agenda -->
-      <section class="tabcontent" id="tab-agenda" role="tabpanel" aria-labelledby="tab-agenda-button" tabindex="-1" hidden>
+      <section class="section" id="agenda">
         <h2>Agenda</h2>
-
         <div class="agenda-cards">
           <div class="agenda-card">
-            <p>1) Abra la agenda y seleccione un horario disponible. 2) Complete el formulario de ingreso con sus datos básicos. 3) Recibirá confirmación por correo o WhatsApp con indicaciones de pago y el enlace de Google Meet; la reserva queda confirmada una vez recibido el pago.</p>
+            <p>1) Abre la agenda y selecciona un horario disponible. 2) Completa el formulario de ingreso con tus datos básicos. 3) Recibirás confirmación por correo o WhatsApp con indicaciones de pago y el enlace de Google Meet; la reserva queda confirmada una vez recibido el pago.</p>
             <div class="agenda-actions">
-              <a class="action-link" href="https://calendar.app.google/dQKob1ggiH3iBzZz9" target="_blank" rel="noopener noreferrer">Agendar aquí</a>
+              <a class="action-link" href="https://calendar.app.google/dQKob1ggiH3iBzZz9" target="_blank" rel="noopener noreferrer" data-track="click_agenda">Agendar aquí</a>
             </div>
           </div>
           <div class="agenda-card">
-            <h3><span class="material-symbols-outlined" aria-hidden="true">policy</span> Encuadre clínico mínimo</h3>
-            <p><strong>Cancelaciones y reagendamiento:</strong> avise con al menos 24 horas de anticipación para reprogramar su sesión.</p>
+            <h3>Encuadre clínico mínimo</h3>
+            <p><strong>Cancelaciones y reagendamiento:</strong> avisa con al menos 24 horas de anticipación para reprogramar tu sesión.</p>
             <p><strong>Confidencialidad y datos:</strong> la información del formulario se usa únicamente para coordinar la atención y mantener contacto clínico; no se comparte con terceros.</p>
-            <p><strong>Urgencias:</strong> esta atención no reemplaza servicios de emergencia. Si está en riesgo inmediato, acuda a un servicio de urgencia local.</p>
+            <p><strong>Urgencias:</strong> esta atención no reemplaza servicios de emergencia. Si estás en riesgo inmediato, acude a un servicio de urgencia local.</p>
           </div>
         </div>
       </section>
 
-      <!-- Pestaña: Contacto -->
-      <section class="tabcontent" id="tab-contacto" role="tabpanel" aria-labelledby="tab-contacto-button" tabindex="-1" hidden>
-        <h2>Contacto</h2>
-
-      <p>
-        <span class="material-symbols-outlined" aria-hidden="true">mail</span>
-        Correo: <a href="mailto:v.sandoval.18@gmail.com">v.sandoval.18@gmail.com</a>
-      </p>
-      <p>
-        <span class="material-symbols-outlined" aria-hidden="true">badge</span>
-        Registro Nacional de Prestadores de Salud (RNS): N° 881427
-      </p>
-      <p>
-        <span class="material-symbols-outlined" aria-hidden="true">description</span>
-        <button class="action-link modal-trigger" type="button" data-modal-target="registro-modal">Ver respaldo de registro (PDF)</button>
-      </p>
-      <p>
-        <span class="material-symbols-outlined" aria-hidden="true">schedule</span>
-        Horario de atención: a convenir según disponibilidad.
-      </p>
-
-      <p>
-        <span class="material-symbols-outlined" aria-hidden="true">picture_as_pdf</span>
-        <a class="action-link" href="docs/recordatorio-sesion.pdf" target="_blank" rel="noopener noreferrer">Descargar “Recordatorio previo a la sesión” (PDF)</a>
-      </p>
-
-      <p>
-        <span class="material-symbols-outlined" aria-hidden="true">event</span>
-        <a href="#agenda">Ir a Agenda →</a>
-      </p>
+      <!-- 1.5 FAQ de conversión -->
+      <!-- 2.4 Accordion de Preguntas Frecuentes -->
+      <section class="section faq" id="faq">
+        <h2>Preguntas frecuentes</h2>
+        <details>
+          <summary>¿Cómo se realiza el pago?</summary>
+          <p>Luego de agendar, recibirás indicaciones de transferencia bancaria. La sesión se confirma con pago previo.</p>
+        </details>
+        <details>
+          <summary>¿Puedo reagendar?</summary>
+          <p>Si necesitas reagendar, avisa con al menos 24 horas de anticipación para reprogramar tu sesión.</p>
+        </details>
+        <details>
+          <summary>¿Cómo se cuidan mis datos?</summary>
+          <p>La información del formulario se usa solo para coordinar tu atención y mantener contacto clínico.</p>
+        </details>
+        <details>
+          <summary>¿Qué pasa en la primera sesión?</summary>
+          <p>Revisamos tu motivo de consulta, expectativas y acordamos el encuadre de trabajo.</p>
+        </details>
       </section>
 
-      <!-- Pestaña: Sobre mí -->
-      <section class="tabcontent" id="tab-sobre-mi" role="tabpanel" aria-labelledby="tab-sobre-mi-button" tabindex="-1" hidden>
-        <h2>Sobre mí</h2>
-        <p>Soy Víctor Sandoval, psicólogo titulado por la Universidad Autónoma de Chile y registrado en la Superintendencia de Salud (N° 881427) como prestador individual de servicios psicológicos. Mi práctica se desarrolla exclusivamente de manera online, dirigida a personas mayores de edad que buscan un espacio de escucha activa, reflexión y trabajo sobre su malestar, en sintonía con las dinámicas actuales de comunicación a través de internet y dispositivos móviles.</p>
-        <p>Actualmente me encuentro cursando estudios de posgrado (Magíster en Psicología Clínica).</p>
-        <p>Realicé mi práctica clínica en la Clínica Psicológica El Llano, un centro de atención vinculado a la Universidad Autónoma de Chile, con sedes en Santiago (Providencia y San Miguel), donde atendí a personas derivadas desde distintos convenios con municipalidades, colegios y organizaciones, así como a usuarios que acudían por iniciativa propia, trabajando con realidades y contextos diversos, siempre bajo supervisión individual y grupal.</p>
-        <p>Trabajo sin imponer diagnósticos ni etiquetas, priorizando un enfoque humano, ético y respetuoso de la singularidad de cada persona. Ofrezco terapia a un costo accesible, fomentando procesos sostenidos que permitan explorar y transformar los conflictos en un ambiente cercano, libre de presiones y comprometido con el bienestar subjetivo.</p>
-      </section>
-
-      <!-- Pestaña: Servicios -->
-      <section class="tabcontent" id="tab-servicios" role="tabpanel" aria-labelledby="tab-servicios-button" tabindex="-1" hidden>
+      <section class="section" id="servicios">
         <h2>Servicios</h2>
-        <p>Atención psicológica individual en modalidad online para personas adultas. Encuadre basado en una escucha atenta y respetuosa, orientada a procesos de análisis y elaboración de síntomas, sin imposición de diagnósticos ni etiquetas.</p>
-        <p>Modalidad: Google Meet · Duración por sesión: 60 minutos · Frecuencia: semanal o a convenir.</p>
-        <p>Ámbitos frecuentes de consulta: angustia, duelo, crisis vitales, relaciones, síntomas ligados al cuerpo, inhibiciones, compulsiones y conflictos con el deseo. El trabajo se sostiene en el tiempo para favorecer movimientos subjetivos estables.</p>
-        <p>Valor por sesión: $10.000 CLP. Confirmación mediante pago previo por transferencia.</p>
-        <p>Requisitos del encuentro online: espacio privado y sin interrupciones, conexión estable a internet y dispositivo con cámara y micrófono en buen funcionamiento.</p>
+        <!-- 2.2 Encadre profesional sobre diagnósticos -->
+        <p>Atención psicológica individual online para personas adultas, con un encuadre clínico orientado a comprender la experiencia subjetiva. El uso de diagnósticos se considera solo cuando aporta claridad al proceso y, de ser necesario, se realiza derivación o coordinación con otros profesionales.</p>
+        <!-- 3.2 Servicios en tarjetas con datos clave -->
+        <div class="service-cards">
+          <article class="service-card">
+            <h3>Modalidad</h3>
+            <p>Online vía Google Meet.</p>
+          </article>
+          <article class="service-card">
+            <h3>Duración</h3>
+            <p>60 minutos por sesión.</p>
+          </article>
+          <article class="service-card">
+            <h3>Frecuencia</h3>
+            <p>Semanal o a convenir.</p>
+          </article>
+          <article class="service-card">
+            <h3>Valor</h3>
+            <p>$10.000 CLP. Pago previo por transferencia.</p>
+          </article>
+          <article class="service-card">
+            <h3>Requisitos</h3>
+            <p>Espacio privado, conexión estable y dispositivo con cámara y micrófono.</p>
+          </article>
+        </div>
+        <!-- 2.1 Ejes clínicos centrales -->
+        <div class="service-axes">
+          <h3>Ejes clínicos centrales</h3>
+          <ul>
+            <li>Ansiedad, angustia y crisis vitales.</li>
+            <li>Relaciones, autoestima y conflictos vinculares.</li>
+          </ul>
+        </div>
+        <p>Ámbitos frecuentes de consulta: duelo, síntomas ligados al cuerpo, inhibiciones, compulsiones y conflictos con el deseo. El trabajo se sostiene en el tiempo para favorecer movimientos subjetivos estables.</p>
+        <!-- 2.3 Diferencial -->
+        <p class="service-differential"><strong>Diferencial:</strong> un estilo de trabajo cercano y ético, con foco en procesos sostenidos y en consultantes que buscan un espacio de escucha sin presiones ni recetas rápidas.</p>
+        <!-- 2.5 Señales de confianza y transparencia -->
+        <div class="service-trust">
+          <h3>Señales de confianza</h3>
+          <ul>
+            <li>Registro Nacional de Prestadores de Salud (RNS) N° 881427.</li>
+            <li>Confidencialidad y uso clínico de los datos del formulario.</li>
+            <li>Pago transparente y confirmación previa a la sesión.</li>
+            <li>Posibilidad de derivación cuando el caso lo requiera.</li>
+          </ul>
+        </div>
       </section>
 
+      <section class="section" id="sobre-mi">
+        <h2>Sobre mí</h2>
+        <!-- 0.6 Reestructuración en 2–3 párrafos con frases ancla -->
+        <p><strong>Qué hago:</strong> acompaño procesos de psicoterapia individual con una escucha clínica cuidadosa, orientada a elaborar el malestar sin imponer etiquetas. Mi trabajo es 100% online, con sesiones de 60 minutos y un encuadre respetuoso de la singularidad.</p>
+        <p><strong>Para quién:</strong> atiendo a personas adultas que desean comprender lo que les ocurre, sostener cambios en el tiempo y contar con un espacio profesional y confidencial. Mi experiencia incluye trabajo clínico supervisado en la Clínica Psicológica El Llano y formación de posgrado en Psicología Clínica.</p>
+        <p><strong>Cómo agendar:</strong> puedes elegir un horario disponible en la agenda online y completar el formulario de ingreso; te responderé con la confirmación y el enlace de sesión.</p>
+      </section>
+
+      <section class="section" id="privacidad">
+        <h2>Privacidad y ética</h2>
+        <!-- 5.1 Política de privacidad breve -->
+        <p>Tu información se utiliza únicamente para coordinar la atención psicológica y mantener el contacto clínico. No comparto datos con terceros ni realizo envíos comerciales. Puedes solicitar actualización o eliminación de tus datos en cualquier momento.</p>
+        <!-- 5.2 Consentimiento informado descargable -->
+        <p>Antes de iniciar la atención, revisa el consentimiento informado: <a href="docs/consentimiento-informado.html" target="_blank" rel="noopener noreferrer">Descargar consentimiento informado</a>.</p>
+      </section>
+
+      <section class="section" id="contacto">
+        <h2>Contacto</h2>
+        <!-- 3.4 Limpieza de ruido visual en Contacto -->
+        <div class="contact-list">
+          <!-- 0.3 Correo con mailto y botón copiar -->
+          <div class="contact-item">
+            <span class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" role="img" focusable="false">
+                <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5z"/>
+              </svg>
+            </span>
+            <div>
+              <span class="contact-label">Correo</span>
+              <span class="contact-value">
+                <a id="contact-email" href="mailto:v.sandoval.18@gmail.com">v.sandoval.18@gmail.com</a>
+                <button class="btn btn-tertiary" type="button" data-copy-email>Copiar correo</button>
+              </span>
+            </div>
+          </div>
+          <!-- 0.4 Reemplazo de textos tipo badge/schedule/picture_as_pdf/event por íconos -->
+          <div class="contact-item">
+            <span class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" role="img" focusable="false">
+                <path d="M12 2a4 4 0 0 1 4 4v2h4a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h4V6a4 4 0 0 1 4-4zm2 6V6a2 2 0 1 0-4 0v2h4z"/>
+              </svg>
+            </span>
+            <div>
+              <span class="contact-label">Registro profesional</span>
+              <span class="contact-value">RNS N° 881427 (Superintendencia de Salud).</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" role="img" focusable="false">
+                <path d="M6 2h9l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm8 1.5V8h4.5L14 3.5z"/>
+              </svg>
+            </span>
+            <div>
+              <span class="contact-label">Respaldo</span>
+              <button class="action-link modal-trigger" type="button" data-modal-target="registro-modal">Ver respaldo de registro (PDF)</button>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" role="img" focusable="false">
+                <path d="M12 1a11 11 0 1 0 11 11A11 11 0 0 0 12 1zm1 11.41 3.3 3.3-1.41 1.41L11 13V6h2z"/>
+              </svg>
+            </span>
+            <div>
+              <span class="contact-label">Horario referencial</span>
+              <span class="contact-value">Lunes a viernes, 09:00–20:00 hrs (Chile).</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" role="img" focusable="false">
+                <path d="M6 2h9l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm8 1.5V8h4.5L14 3.5z"/>
+                <path d="M8 13h8v2H8zm0 4h6v2H8z"/>
+              </svg>
+            </span>
+            <div>
+              <span class="contact-label">Documento útil</span>
+              <a class="action-link" href="docs/recordatorio-sesion.pdf" target="_blank" rel="noopener noreferrer">Descargar “Recordatorio previo a la sesión” (PDF)</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" role="img" focusable="false">
+                <path d="M7 2h10a2 2 0 0 1 2 2v2H5V4a2 2 0 0 1 2-2zm12 6H5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2zm-9 4h2v2h-2zm4 0h2v2h-2z"/>
+              </svg>
+            </span>
+            <div>
+              <span class="contact-label">Agenda</span>
+              <a href="#agenda">Ir a Agenda →</a>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer>
+      <!-- 0.2 Copyright actualizado y centrado -->
       <p>© 2026 Víctor Sandoval</p>
     </footer>
   </div>
   <div class="floating-actions">
-    <a class="whatsapp-float floating-button" href="https://wa.me/56976449957?text=Hola%20Víctor,%20quisiera%20consultar%20por%20una%20sesión%20online." target="_blank" rel="noopener noreferrer" aria-label="Chat por WhatsApp">
+    <a class="whatsapp-float floating-button" href="https://wa.me/56976449957?text=Hola%20Víctor,%20quisiera%20consultar%20por%20una%20sesión%20online." target="_blank" rel="noopener noreferrer" aria-label="Chat por WhatsApp" data-track="click_whatsapp">
       <span class="whatsapp-float__icon" aria-hidden="true">
         <svg viewBox="0 0 32 32">
           <path d="M19.11 17.39c-.28-.14-1.63-.8-1.88-.9-.25-.1-.43-.14-.62.14-.18.27-.71.9-.87 1.08-.16.18-.32.2-.6.07-.28-.14-1.19-.44-2.27-1.41-.84-.75-1.41-1.67-1.58-1.95-.16-.27-.02-.42.12-.55.12-.12.28-.32.42-.48.14-.16.18-.27.28-.46.1-.18.05-.34-.02-.48-.07-.14-.62-1.5-.85-2.06-.22-.54-.45-.47-.62-.48l-.53-.01c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.3 0 1.36.99 2.68 1.12 2.86.14.18 1.94 2.96 4.7 4.15.66.28 1.18.45 1.58.58.66.21 1.26.18 1.73.11.53-.08 1.63-.66 1.86-1.31.23-.64.23-1.19.16-1.31-.07-.12-.25-.18-.53-.32z"/>
@@ -147,14 +334,28 @@
       </span>
       <span class="whatsapp-float__text">Chat por WhatsApp</span>
     </a>
-    <a class="calendar-float floating-button" href="https://calendar.app.google/dQKob1ggiH3iBzZz9" target="_blank" rel="noopener noreferrer" aria-label="Agendar en Google Calendar">
-      <span class="calendar-float__icon material-symbols-outlined" aria-hidden="true">event</span>
+    <a class="calendar-float floating-button" href="https://calendar.app.google/dQKob1ggiH3iBzZz9" target="_blank" rel="noopener noreferrer" aria-label="Agendar en Google Calendar" data-track="click_agenda">
+      <span class="calendar-float__icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24">
+          <path d="M7 2h10a2 2 0 0 1 2 2v2H5V4a2 2 0 0 1 2-2zm12 6H5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2zm-9 4h2v2h-2zm4 0h2v2h-2z"/>
+        </svg>
+      </span>
       <span class="calendar-float__text">Agendar</span>
     </a>
-    <a class="form-float floating-button" href="https://forms.gle/H3sKc87ch3qW783m7" target="_blank" rel="noopener noreferrer" aria-label="Abrir formulario de ingreso">
-      <span class="form-float__icon material-symbols-outlined" aria-hidden="true">assignment</span>
+    <a class="form-float floating-button" href="https://forms.gle/H3sKc87ch3qW783m7" target="_blank" rel="noopener noreferrer" aria-label="Abrir formulario de ingreso" data-track="click_form">
+      <span class="form-float__icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24">
+          <path d="M6 2h9l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm8 1.5V8h4.5L14 3.5z"/>
+          <path d="M8 13h8v2H8zm0 4h6v2H8z"/>
+        </svg>
+      </span>
       <span class="form-float__text">Formulario de ingreso</span>
     </a>
+  </div>
+  <!-- 3.3 CTA fijo en versión móvil -->
+  <div class="mobile-cta" aria-label="Acciones rápidas">
+    <a class="btn btn-primary" href="https://calendar.app.google/dQKob1ggiH3iBzZz9" target="_blank" rel="noopener noreferrer" data-track="click_agenda">Agendar</a>
+    <a class="btn btn-secondary" href="https://wa.me/56976449957?text=Hola%20Víctor,%20quisiera%20consultar%20por%20una%20sesión%20online." target="_blank" rel="noopener noreferrer" data-track="click_whatsapp">WhatsApp</a>
   </div>
 
   <div class="modal" id="registro-modal" role="dialog" aria-modal="true" aria-labelledby="registro-modal-title" aria-hidden="true" hidden>
@@ -165,61 +366,48 @@
         <button class="modal__close" type="button" data-modal-close>Cerrar</button>
       </header>
       <div class="modal__body">
-        <iframe src="docs/17.673.053-6.pdf" title="Respaldo de registro"></iframe>
+        <iframe src="docs/17.673.053-6.pdf" title="Respaldo de registro" loading="lazy"></iframe>
       </div>
     </div>
   </div>
 
   <script>
-  // Tabs con soporte de hash (#servicios, #agenda, etc.)
   document.addEventListener('DOMContentLoaded', () => {
-    const buttons = document.querySelectorAll('.tablink');
-    const tabs = {
-      'terapia-online': document.getElementById('tab-terapia-online'),
-      'agenda': document.getElementById('tab-agenda'),
-      'contacto':  document.getElementById('tab-contacto'),
-      'sobre-mi': document.getElementById('tab-sobre-mi'),
-      'servicios': document.getElementById('tab-servicios')
+    // 3.5 Scroll spy para navegación por anchors
+    const navLinks = Array.from(document.querySelectorAll('.nav-link'));
+    const sections = navLinks
+      .map(link => document.querySelector(link.getAttribute('href')))
+      .filter(Boolean);
+
+    const setActiveLink = (id) => {
+      navLinks.forEach(link => {
+        const isActive = link.getAttribute('href') === `#${id}`;
+        link.classList.toggle('active', isActive);
+        if (isActive) {
+          link.setAttribute('aria-current', 'page');
+        } else {
+          link.removeAttribute('aria-current');
+        }
+      });
     };
 
-    function activate(key, options = {}) {
-      buttons.forEach(b => {
-        const isActive = b.dataset.tab === key;
-        b.classList.toggle('active', isActive);
-        b.setAttribute('aria-selected', isActive);
-        b.tabIndex = isActive ? 0 : -1;
-      });
-      Object.entries(tabs).forEach(([k, el]) => {
-        const isActive = k === key;
-        el.classList.toggle('active', isActive);
-        el.hidden = !isActive;
-      });
-
-      if (options.focusPanel) {
-        const panel = tabs[key];
-        if (panel) {
-          panel.focus({ preventScroll: false });
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setActiveLink(entry.target.id);
         }
-      }
-    }
-
-    function initFromHash() {
-      const key = (location.hash || '#terapia-online').slice(1);
-      const resolvedKey = tabs[key] ? key : 'terapia-online';
-      const fromHash = Boolean(location.hash);
-      activate(resolvedKey, { focusPanel: fromHash });
-    }
-
-    buttons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const key = btn.dataset.tab;
-        history.replaceState(null, '', '#' + key);
-        activate(key);
       });
-    });
+    }, { rootMargin: '-30% 0px -55% 0px', threshold: 0.1 });
 
-    initFromHash();
-    window.addEventListener('hashchange', initFromHash);
+    sections.forEach(section => observer.observe(section));
+
+    // 6.3 Estructura para pruebas A/B semanales
+    const now = new Date();
+    const start = new Date(now.getFullYear(), 0, 1);
+    const days = Math.floor((now - start) / 86400000);
+    const weekNumber = Math.ceil((days + start.getDay() + 1) / 7);
+    const variant = weekNumber % 2 === 0 ? 'A' : 'B';
+    document.documentElement.dataset.abVariant = variant;
 
     const modal = document.getElementById('registro-modal');
     const modalTriggers = document.querySelectorAll('.modal-trigger');
@@ -263,7 +451,48 @@
         closeModal();
       }
     });
+
+    // 6.2 Eventos de conversión (WhatsApp, agenda, formulario)
+    const trackEvent = (name) => {
+      if (window.goatcounter && typeof window.goatcounter.count === 'function') {
+        window.goatcounter.count({
+          path: `/event/${name}`,
+          title: name,
+          event: true
+        });
+      }
+    };
+
+    document.querySelectorAll('[data-track]').forEach(link => {
+      link.addEventListener('click', () => {
+        trackEvent(link.dataset.track);
+      });
+    });
+
+    // 0.3 Copiar correo al portapapeles
+    const copyButton = document.querySelector('[data-copy-email]');
+    if (copyButton) {
+      copyButton.addEventListener('click', async () => {
+        const email = document.getElementById('contact-email');
+        if (!email) return;
+        const text = email.textContent.trim();
+        try {
+          await navigator.clipboard.writeText(text);
+          copyButton.textContent = 'Copiado';
+          setTimeout(() => {
+            copyButton.textContent = 'Copiar correo';
+          }, 2000);
+        } catch (error) {
+          copyButton.textContent = 'No se pudo copiar';
+          setTimeout(() => {
+            copyButton.textContent = 'Copiar correo';
+          }, 2000);
+        }
+      });
+    }
   });
   </script>
+  <!-- 6.1 Analítica ligera -->
+  <script data-goatcounter="https://victorsandoval.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>
