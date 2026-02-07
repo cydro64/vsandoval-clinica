@@ -58,6 +58,14 @@ img {
   background: var(--bg-main);
 }
 
+.imagen-como-funciona-full {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  width: 100%;
+}
+
 .section-title {
   text-align: center;
   font-family: var(--font-serif);
