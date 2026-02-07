@@ -55,7 +55,15 @@ img {
 }
 
 .section-how {
-  background: var(--bg-main);
+  background: #f7f1e6;
+}
+
+.imagen-como-funciona-full {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .section-title {
