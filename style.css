@@ -58,20 +58,18 @@ img {
   background: #f7f1e6;
 }
 
-.imagen-como-funciona-full {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  margin: 0 auto;
-  width: 100%;
+.how-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 48px;
 }
 
-.imagen-como-funciona-full {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  margin: 0 auto;
-  width: 100%;
+.how-header .section-title {
+  margin-bottom: 16px;
+}
+
+.how-header p {
+  margin: 0;
 }
 
 .section-title {
@@ -319,31 +317,54 @@ img {
   stroke-linejoin: round;
 }
 
-.steps-flow {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 48px;
-  text-align: center;
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
 }
 
 .step-card {
   text-align: center;
-  max-width: 260px;
+  background: #fff;
+  border-radius: 18px;
+  border: 1px solid var(--border-soft);
+  box-shadow: var(--shadow-soft);
+  padding: 28px 22px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.step-media {
-  width: 220px;
-  height: 220px;
-  margin: 0 auto 18px;
+.step-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12);
+}
+
+.step-number {
+  width: 44px;
+  height: 44px;
+  margin: 0 auto 14px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step-icon {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 14px;
+  border-radius: 16px;
+  background: var(--bg-alt);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.step-media svg {
-  width: 120px;
-  height: 120px;
+.step-icon svg {
+  width: 34px;
+  height: 34px;
   fill: none;
   stroke: var(--accent);
   stroke-width: 1.8;
@@ -351,40 +372,20 @@ img {
   stroke-linejoin: round;
 }
 
-.step-arrow {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 72px;
-  flex-shrink: 0;
-}
-
-.step-arrow svg {
-  width: 60px;
-  height: 12px;
-  fill: none;
-  stroke: var(--accent);
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.step-body {
-  margin: 0 auto;
-}
-
-.step-number {
+.step-card h3 {
+  margin: 0 0 8px;
   font-family: var(--font-serif);
-  font-size: 1.2rem;
-  color: var(--accent);
-  display: block;
-  margin-bottom: 10px;
+  font-size: 1.25rem;
 }
 
-.step-body p {
+.step-card p {
   margin: 0;
-  font-size: 1rem;
-  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.steps-cta {
+  margin-top: 36px;
+  text-align: center;
 }
 
 .services-layout {
@@ -546,6 +547,10 @@ img {
   .services-layout {
     gap: 40px;
   }
+
+  .steps-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 768px) {
@@ -595,18 +600,9 @@ img {
     grid-template-columns: 1fr;
   }
 
-  .steps-flow {
-    flex-direction: column;
-    gap: 28px;
-  }
-
-  .step-arrow {
-    transform: rotate(90deg);
-  }
-
-  .step-media {
-    width: 200px;
-    height: 200px;
+  .steps-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .about-layout {
