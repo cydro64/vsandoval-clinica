@@ -136,7 +136,14 @@ img {
   transition: width 0.3s ease;
 }
 
-.site-nav a:hover::after {
+.site-nav a:hover,
+.site-nav a:focus-visible {
+  text-decoration: none;
+  color: var(--accent);
+}
+
+.site-nav a:hover::after,
+.site-nav a:focus-visible::after {
   width: 100%;
 }
 
@@ -422,6 +429,21 @@ img {
   font-size: 0.95rem;
 }
 
+.calendar-mobile-cta {
+  display: none;
+  margin-top: 18px;
+  text-align: center;
+  padding: 18px;
+  border-radius: 14px;
+  border: 1px solid var(--border-soft);
+  background: #fff;
+}
+
+.calendar-mobile-cta p {
+  margin: 0 0 12px;
+  font-size: 0.95rem;
+}
+
 .calendar-note a {
   color: var(--accent);
   text-decoration: underline;
@@ -626,8 +648,12 @@ img {
     padding: 140px 0 80px;
   }
 
-  .calendar-embed iframe {
-    min-height: 600px;
+  .calendar-embed {
+    display: none;
+  }
+
+  .calendar-mobile-cta {
+    display: block;
   }
 
   .hero-actions {
