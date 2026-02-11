@@ -292,6 +292,7 @@
       <nav class="site-nav" data-nav aria-label="Navegación principal">
         <a href="#terapia-online">Terapia online</a>
         <a href="#como-funciona">Cómo funciona</a>
+        <a href="#valor-sesion">Valor sesión</a>
         <a href="#servicios">Servicios</a>
         <a href="#sobre-mi">Sobre mí</a>
         <a href="#faq">Preguntas frecuentes</a>
@@ -320,7 +321,6 @@
         <p class="hero-eyebrow">Psicoterapia online en Chile</p>
         <h1>Terapia psicológica online para personas adultas</h1>
         <p>Te acompaño en procesos de psicoterapia individual, en modalidad online, con una escucha clínica respetuosa. Sesiones de 60 minutos por videollamada, con seguimiento profesional.</p>
-        <p class="hero-value"><strong>Valor por sesión:</strong> $10.000 CLP · Online vía Google Meet.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="https://calendar.app.google/dQKob1ggiH3iBzZz9" target="_blank" rel="noopener noreferrer">Agendar sesión</a>
           <a class="btn btn-secondary" href="https://forms.gle/H3sKc87ch3qW783m7" target="_blank" rel="noopener noreferrer">Completar formulario</a>
@@ -380,6 +380,28 @@
         <div class="steps-cta">
           <a class="btn btn-primary" href="https://calendar.app.google/dQKob1ggiH3iBzZz9" target="_blank" rel="noopener noreferrer">Comenzar ahora</a>
         </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="valor-sesion">
+      <div class="container">
+        <h2 class="section-title">Valor de sesión</h2>
+        <article class="value-card">
+          <h3>Valor por sesión: $10.000 CLP</h3>
+          <p>La sesión se paga antes de que se ejecute, para dejar acordada previamente toda la gestión del cobro.</p>
+          <p>El pago se gestiona vía transferencia bancaria y la coordinación la realizo por WhatsApp, donde te envío los datos de transferencia.</p>
+          <p>Así, al momento de la sesión podemos enfocarnos en el proceso terapéutico y no en trámites de pago.</p>
+        </article>
+
+        <article class="value-card value-card--comment">
+          <h3>¿Quieres comentar o consultar algo antes de agendar?</h3>
+          <p>Escribe tu comentario y al presionar el botón se abrirá WhatsApp con el mensaje redactado automáticamente.</p>
+          <form class="whatsapp-form" data-whatsapp-form>
+            <label for="whatsapp-comment">Tu comentario</label>
+            <textarea id="whatsapp-comment" name="comment" rows="4" placeholder="Hola Víctor, me gustaría consultar por..."></textarea>
+            <button class="btn btn-primary" type="submit">Enviar comentario por WhatsApp</button>
+          </form>
+        </article>
       </div>
     </section>
 
@@ -528,6 +550,27 @@
       navToggle.addEventListener('click', () => {
         const isOpen = nav.classList.toggle('is-open');
         navToggle.setAttribute('aria-expanded', isOpen);
+      });
+    }
+
+    const whatsappForm = document.querySelector('[data-whatsapp-form]');
+
+    if (whatsappForm) {
+      whatsappForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const formData = new FormData(whatsappForm);
+        const comment = String(formData.get('comment') || '').trim();
+
+        if (!comment) {
+          return;
+        }
+
+        const message = `Hola Víctor, te comparto este comentario antes de agendar:
+
+${comment}`;
+        const whatsappUrl = `https://wa.me/56976449957?text=${encodeURIComponent(message)}`;
+
+        window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
       });
     }
   </script>
