@@ -683,6 +683,64 @@ img {
   background-color: #1e2d1e;
 }
 
+/* ===== WhatsApp nav ===== */
+.whatsapp-nav {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #5a7a5a;
+  font-size: 0.9rem;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid #5a7a5a;
+}
+
+/* ===== Valor sesión ===== */
+.valor-section { background: #faf8f4; padding: 80px 40px; }
+.valor-grid { display: flex; gap: 40px; max-width: 960px; margin: 0 auto; align-items: stretch; }
+.valor-card { flex: 1; background: white; border-radius: 16px; padding: 48px; box-shadow: 0 2px 20px rgba(0,0,0,0.06); }
+.valor-card h2 { margin-bottom: 20px; }
+.valor-numero { font-family: 'DM Serif Display', serif; font-size: 3.5rem; color: #1e2d1e; line-height: 1; margin-bottom: 28px; }
+.valor-numero span { font-family: 'Questrial', sans-serif; font-size: 1.2rem; color: #888; margin-left: 8px; }
+.valor-checks { list-style: none; padding: 0; }
+.valor-checks li { padding: 12px 0; border-bottom: 1px solid #eee; font-size: 0.95rem; color: #444; display: flex; align-items: center; gap: 10px; }
+.valor-checks li:last-child { border-bottom: none; }
+.check { color: #5a7a5a; font-weight: bold; }
+.valor-whatsapp { flex: 1; background: #eef3ee; border-radius: 16px; padding: 48px; display: flex; flex-direction: column; gap: 16px; }
+.valor-whatsapp h3 { font-family: 'DM Serif Display', serif; font-size: 1.6rem; color: #1e2d1e; }
+.valor-whatsapp p { color: #555; font-size: 0.95rem; }
+.valor-whatsapp textarea { width: 100%; min-height: 140px; border: 1px solid #cdd9cd; border-radius: 10px; padding: 14px; font-family: 'Questrial', sans-serif; font-size: 0.95rem; resize: none; background: white; box-sizing: border-box; }
+.btn-whatsapp { background: #25D366; color: white; border: none; border-radius: 30px; padding: 16px; font-size: 1rem; font-weight: bold; cursor: pointer; width: 100%; }
+
+/* ===== Servicios ===== */
+.servicios-section { background: white; padding: 80px 40px; }
+.servicios-grid { display: flex; gap: 60px; max-width: 960px; margin: 0 auto; align-items: center; }
+.servicios-texto { flex: 1; }
+.servicios-tag { display: inline-block; background: #eef3ee; color: #5a7a5a; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; margin-bottom: 16px; }
+.servicios-texto h2 { margin-bottom: 16px; }
+.servicios-texto p { color: #555; line-height: 1.8; margin-bottom: 24px; }
+.servicios-registro { display: flex; align-items: flex-start; gap: 12px; background: #f5f3ef; padding: 16px; border-radius: 10px; font-size: 0.85rem; color: #444; }
+.servicios-registro span { color: #5a7a5a; font-size: 1.2rem; margin-top: 2px; }
+.servicios-iconos { flex: 0 0 280px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.servicio-item { background: #f5f3ef; border-radius: 12px; padding: 28px; text-align: center; font-size: 1.8rem; }
+.servicio-item p { font-size: 0.85rem; color: #444; margin-top: 8px; font-family: 'Questrial', sans-serif; }
+
+/* ===== Footer nuevo ===== */
+.footer-dark { background: #1e2d1e; color: #c8c2b8; padding: 60px 40px 0; }
+.footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 40px; max-width: 960px; margin: 0 auto; padding-bottom: 48px; }
+.footer-logo { font-family: 'DM Serif Display', serif; font-size: 1.1rem; color: #f0ebe3; margin-bottom: 20px; }
+.footer-emergencia { background: rgba(255,255,255,0.06); border-radius: 10px; padding: 16px; font-size: 0.78rem; line-height: 1.6; }
+.emergencia-titulo { color: #a0bfa0; font-weight: bold; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px; }
+.footer-links { display: flex; gap: 40px; }
+.footer-links h5 { color: #a0bfa0; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 16px; }
+.footer-links ul { list-style: none; padding: 0; }
+.footer-links li { margin-bottom: 10px; }
+.footer-links a { color: #c8c2b8; text-decoration: none; font-size: 0.9rem; }
+.footer-cta h5 { color: #a0bfa0; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 16px; }
+.btn-footer { display: block; background: #5a7a5a; color: white; text-align: center; padding: 16px; border-radius: 30px; font-weight: bold; font-size: 0.9rem; text-decoration: none; }
+.footer-bottom { max-width: 960px; margin: 0 auto; padding: 24px 0; border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.78rem; color: #6a8a6a; }
+
 @media (max-width: 980px) {
   .site-nav {
     gap: 18px;
