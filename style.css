@@ -8,8 +8,8 @@
   --accent-dark: #5c7c6b;
   --border-soft: #e5e0d8;
   --shadow-soft: 0 20px 40px rgba(0, 0, 0, 0.08);
-  --font-serif: "Playfair Display", "Times New Roman", serif;
-  --font-sans: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Inter", sans-serif;
 }
 
 * {
@@ -22,10 +22,14 @@ html {
 
 body {
   margin: 0;
-  font-family: var(--font-sans);
+  font-family: 'Inter', sans-serif;
   color: var(--text-main);
   background: var(--bg-main);
   line-height: 1.7;
+}
+
+h1, h2, h3 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
 }
 
 a {
