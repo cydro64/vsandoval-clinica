@@ -1,507 +1,306 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-CL">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Víctor Sandoval — Psicólogo Clínico</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --paper: #f6f2ea;
-      --ink: #1d1a17;
-      --muted: #6b6258;
-      --rule: rgba(29, 26, 23, 0.16);
-      --accent: #312923;
-      --max: 1500px;
-      --gutter: clamp(18px, 2vw, 34px);
-      --section-gap: clamp(52px, 8vw, 120px);
-      --body: clamp(1rem, 0.96rem + 0.15vw, 1.08rem);
-      --small: clamp(0.82rem, 0.78rem + 0.15vw, 0.95rem);
-      --display: clamp(3.4rem, 7vw, 8.8rem);
-      --headline: clamp(2rem, 3vw, 3.6rem);
-      --subhead: clamp(1.2rem, 1rem + 0.8vw, 1.9rem);
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Psicoterapia Online en Chile - Víctor Sandoval</title>
+  <meta name="description" content="Psicoterapia individual online para personas adultas. Orientación psicoanalítica. Sesiones de 50 minutos por videollamada." />
+  <meta property="og:title" content="Psicoterapia Online en Chile - Víctor Sandoval" />
+  <meta property="og:description" content="Psicoterapia individual online para personas adultas. Orientación psicoanalítica. Sesiones de 50 minutos por videollamada." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://cydro64.github.io/vsandoval-clinica/" />
+  <meta property="og:image" content="https://cydro64.github.io/vsandoval-clinica/docs/imagenportada.jpg" />
+  <meta property="og:locale" content="es_CL" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://cydro64.github.io/vsandoval-clinica/" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Questrial&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Víctor Sandoval",
+    "url": "https://cydro64.github.io/vsandoval-clinica/",
+    "areaServed": "CL",
+    "serviceType": "Psicoterapia online",
+    "description": "Psicoterapia individual online para personas adultas en Chile.",
+    "provider": {
+      "@type": "Person",
+      "name": "Víctor Sandoval",
+      "jobTitle": "Psicólogo"
     }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: "Inter", system-ui, sans-serif;
-      background: var(--paper);
-      color: var(--ink);
-      font-size: var(--body);
-      line-height: 1.62;
-      text-rendering: optimizeLegibility;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
-
-    .page {
-      width: min(calc(100% - 36px), var(--max));
-      margin: 0 auto;
-      padding: 18px 0 72px;
-    }
-
-    .topbar {
-      display: grid;
-      grid-template-columns: 1fr auto auto;
-      gap: 16px;
-      align-items: start;
-      padding: 10px 0 26px;
-      border-bottom: 1px solid var(--rule);
-      font-size: var(--small);
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-    }
-
-    .topbar div:nth-child(2),
-    .topbar div:nth-child(3) {
-      color: var(--muted);
-      text-align: right;
-    }
-
-    .lead {
-      display: grid;
-      grid-template-columns: 1.2fr 0.9fr 0.75fr;
-      gap: var(--gutter);
-      align-items: end;
-      min-height: 42vh;
-      padding: 30px 0 24px;
-      border-bottom: 1px solid var(--rule);
-    }
-
-    .kicker, .section-label, .note {
-      font-size: var(--small);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--muted);
-    }
-
-    .display {
-      font-family: "Cormorant Garamond", serif;
-      font-size: var(--display);
-      line-height: 0.88;
-      letter-spacing: -0.03em;
-      font-weight: 600;
-      margin: 10px 0 0;
-      max-width: 9ch;
-    }
-
-    .lead-copy {
-      align-self: center;
-      padding-bottom: 12px;
-    }
-
-    .lead-copy p {
-      margin: 0;
-      max-width: 35ch;
-      font-size: clamp(1.05rem, 1rem + 0.25vw, 1.25rem);
-      line-height: 1.58;
-    }
-
-    .lead-meta {
-      display: grid;
-      gap: 14px;
-      align-self: start;
-      padding-top: 10px;
-    }
-
-    .meta-line {
-      padding-top: 10px;
-      border-top: 1px solid var(--rule);
-    }
-
-    .meta-line strong,
-    .faq-item summary span,
-    .booking-cta,
-    h2, h3 { font-weight: 600; }
-
-    .main-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.08fr) minmax(280px, 0.92fr);
-      gap: clamp(30px, 4vw, 70px);
-      padding-top: 22px;
-    }
-
-    .left-column, .right-column {
-      display: grid;
-      gap: var(--section-gap);
-      align-content: start;
-    }
-
-    .portrait-block {
-      display: grid;
-      grid-template-columns: 0.8fr 1.2fr;
-      gap: var(--gutter);
-      align-items: start;
-    }
-
-    .portrait {
-      aspect-ratio: 4 / 5;
-      overflow: hidden;
-      background: #e7e0d5;
-      border: 1px solid var(--rule);
-    }
-
-    .portrait img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 10%;
-      filter: grayscale(100%);
-    }
-
-    .caption {
-      margin-top: 10px;
-      color: var(--muted);
-      font-size: var(--small);
-      max-width: 22ch;
-    }
-
-    .essay h2, .rates h2, .faq h2, .booking h2 {
-      font-family: "Cormorant Garamond", serif;
-      font-size: var(--headline);
-      line-height: 0.98;
-      letter-spacing: -0.02em;
-      margin: 10px 0 20px;
-      max-width: 10ch;
-    }
-
-    .essay .opening {
-      font-size: clamp(1.24rem, 1.05rem + 0.7vw, 1.8rem);
-      line-height: 1.4;
-      max-width: 27ch;
-      margin: 0 0 24px;
-    }
-
-    .essay p, .approach p, .booking p, .rates p, .faq p {
-      max-width: 60ch;
-      margin: 0 0 16px;
-    }
-
-    .pull-quote {
-      margin: 40px 0 10px;
-      padding: 26px 0 0;
-      border-top: 1px solid var(--rule);
-      font-family: "Cormorant Garamond", serif;
-      font-size: clamp(1.8rem, 1.3rem + 1.4vw, 3rem);
-      line-height: 1.05;
-      letter-spacing: -0.02em;
-      max-width: 14ch;
-    }
-
-    .approach {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 26px;
-      padding-top: 10px;
-      border-top: 1px solid var(--rule);
-    }
-
-    .approach h3, .rates h3, .booking h3 {
-      font-size: 0.95rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin: 0 0 10px;
-      font-family: "Inter", sans-serif;
-    }
-
-    .rates {
-      padding-top: 12px;
-      border-top: 1px solid var(--rule);
-    }
-
-    .rates-layout {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 28px;
-    }
-
-    .price-line {
-      display: flex;
-      justify-content: space-between;
-      gap: 18px;
-      padding: 12px 0;
-      border-top: 1px solid var(--rule);
-      font-size: clamp(0.98rem, 0.93rem + 0.15vw, 1.08rem);
-    }
-
-    .price-line:last-child { border-bottom: 1px solid var(--rule); }
-    .price { white-space: nowrap; font-weight: 600; }
-
-    .booking {
-      display: grid;
-      grid-template-columns: 0.92fr 1.08fr;
-      gap: 28px;
-      align-items: start;
-      border-top: 1px solid var(--rule);
-      padding-top: 12px;
-    }
-
-    .booking-cta {
-      display: inline-block;
-      margin-top: 6px;
-      padding-bottom: 4px;
-      border-bottom: 1px solid currentColor;
-      font-size: clamp(1.05rem, 0.98rem + 0.25vw, 1.2rem);
-    }
-
-    .aside-note {
-      color: var(--muted);
-      font-size: var(--small);
-      max-width: 30ch;
-    }
-
-    .faq {
-      padding-top: 12px;
-      border-top: 1px solid var(--rule);
-    }
-
-    .faq-list { display: grid; gap: 0; }
-
-    .faq-item {
-      border-top: 1px solid var(--rule);
-      padding: 0;
-    }
-
-    .faq-item:last-child { border-bottom: 1px solid var(--rule); }
-
-    .faq-item summary {
-      list-style: none;
-      cursor: pointer;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 16px;
-      align-items: baseline;
-      padding: 16px 0;
-    }
-
-    .faq-item summary::-webkit-details-marker { display: none; }
-    .faq-item summary::after { content: "+"; color: var(--muted); font-size: 1.2rem; line-height: 1; }
-    .faq-item[open] summary::after { content: "−"; }
-
-    .faq-item p {
-      padding: 0 40px 18px 0;
-      margin: 0;
-      color: #2a2621;
-    }
-
-    .foot {
-      margin-top: clamp(56px, 8vw, 120px);
-      padding-top: 18px;
-      border-top: 1px solid var(--rule);
-      display: grid;
-      grid-template-columns: 1.1fr 1fr 0.8fr;
-      gap: 18px;
-      align-items: start;
-      font-size: var(--small);
-      color: var(--muted);
-    }
-
-    .foot strong { color: var(--ink); font-weight: 600; }
-
-    .emergencia {
-      margin-top: 16px;
-      padding: 12px;
-      border: 1px solid var(--rule);
-      font-size: var(--small);
-      color: var(--muted);
-      line-height: 1.6;
-    }
-
-    @media (max-width: 1100px) {
-      .lead, .main-grid, .booking, .rates-layout, .approach, .portrait-block, .foot {
-        grid-template-columns: 1fr;
-      }
-      .lead { min-height: auto; }
-      .display { max-width: 12ch; }
-      .lead-copy, .lead-meta { padding-bottom: 0; }
-    }
-
-    @media (max-width: 720px) {
-      .page { width: min(calc(100% - 24px), var(--max)); padding-top: 10px; }
-      .topbar { grid-template-columns: 1fr; gap: 8px; }
-      .topbar div:nth-child(2), .topbar div:nth-child(3) { text-align: left; }
-      .display { line-height: 0.92; }
-      .essay .opening, .lead-copy p, .pull-quote { max-width: none; }
-      .faq-item p { padding-right: 0; }
-    }
-  </style>
+  }
+  </script>
 </head>
 <body>
-  <div class="page">
-    <header class="topbar">
-      <div><strong>Víctor Sandoval</strong> / Psicólogo Clínico</div>
-      <div>Psicoterapia online para personas adultas</div>
-      <div>RNS N° 881427 / Chile</div>
-    </header>
+  <header class="site-header" id="inicio">
+    <div class="container header-content">
+      <a class="logo" href="#inicio">Víctor Sandoval <span>| Psicólogo</span></a>
+      <nav class="site-nav" data-nav aria-label="Navegación principal">
+        <a href="#terapia-online">Terapia online</a>
+        <a href="#como-funciona">Cómo funciona</a>
+        <a href="#valor-sesion">Valor sesión</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#faq">Preguntas frecuentes</a>
+      </nav>
+      <div class="header-actions">
+        <a class="icon-button" href="https://wa.me/56976449957?text=Hola%20Víctor,%20quisiera%20consultar%20por%20una%20sesión%20online." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3a9 9 0 0 1 7.74 13.61L21 21l-4.54-1.22A9 9 0 1 1 12 3z" />
+            <path d="M8.7 8.5c.2-.3.4-.3.6-.3h.4c.2 0 .4.1.5.3l.7 1.7c.1.2.1.4 0 .5l-.5.6c-.1.1-.1.3 0 .4.4.7 1.2 1.5 2 1.9.1.1.3.1.4 0l.6-.5c.1-.1.3-.1.5 0l1.6.7c.2.1.3.3.3.5v.4c0 .2 0 .4-.2.6-.2.2-.7.6-1.6.6-.9 0-1.8-.3-2.8-.9-1-.6-1.9-1.4-2.6-2.4-.7-1-.9-1.8-.9-2.6 0-.8.4-1.4.6-1.7z" />
+          </svg>
+        </a>
+        <a class="btn btn-primary" href="https://calendar.app.google/dQKob1ggiH3iBzZz9" target="_blank" rel="noopener noreferrer">Agendar</a>
+        <button class="nav-toggle" type="button" data-nav-toggle aria-label="Abrir menú" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
 
-    <section class="lead" aria-labelledby="site-title">
-      <div>
-        <div class="kicker">Práctica privada / Sesiones online</div>
-        <h1 class="display" id="site-title">Un espacio para hablar de lo que no encuentra palabras todavía.</h1>
-      </div>
-      <div class="lead-copy">
-        <p>
-          Psicoterapia para personas adultas que atraviesan malestar, repeticiones que no comprenden, vínculos difíciles, o esa sensación de que algo no está bien aunque sea difícil nombrarlo.
-        </p>
-      </div>
-      <div class="lead-meta">
-        <div class="meta-line"><strong>Formato</strong><br>Sesiones individuales de 50 minutos vía Google Meet.</div>
-        <div class="meta-line"><strong>Frecuencia</strong><br>Semanal o a convenir según el proceso.</div>
-        <div class="meta-line"><strong>Consultas</strong><br><a href="#contacto">Primeras consultas por aquí</a></div>
+  <main>
+    <section class="hero" id="terapia-online">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <p class="hero-eyebrow">Psicoterapia online en Chile</p>
+        <h1>Un espacio para hablar de lo que no encuentra palabras todavía.</h1>
+        <p>Psicoterapia individual online para personas adultas. Orientación psicoanalítica. Sesiones de 50 minutos por videollamada.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://forms.gle/H3sKc87ch3qW783m7" target="_blank" rel="noopener noreferrer">Quiero agendar una sesión</a>
+        </div>
+        <a class="hero-link" href="https://wa.me/56976449957?text=Hola%20Víctor,%20quisiera%20consultar%20por%20una%20sesión%20online." target="_blank" rel="noopener noreferrer">¿Tienes dudas? Escríbeme antes por WhatsApp</a>
       </div>
     </section>
 
-    <main class="main-grid">
-      <div class="left-column">
-        <section class="portrait-block" aria-labelledby="about-title">
-          <figure>
-            <div class="portrait">
-              <img src="docs/victor-sandoval.png" alt="Víctor Sandoval, psicólogo clínico" />
-            </div>
-            <figcaption class="caption">Víctor Sandoval — Psicólogo clínico, atención online en Chile.</figcaption>
-          </figure>
-
-          <div class="essay">
-            <div class="section-label">Sobre mí</div>
-            <h2 id="about-title">Práctica clínica, no gestión del bienestar.</h2>
-            <p class="opening">
-              Soy psicólogo clínico. Trabajo de forma online con personas adultas, en un encuadre de orientación psicoanalítica.
-            </p>
-            <p>
-              Mi trabajo no está orientado a resolver síntomas ni a vender bienestar. Está orientado a abrir un espacio donde lo que aparece pueda ser escuchado — el malestar incluido. Sin apuro, sin reducirlo a una categoría, sin buscar la respuesta rápida.
-            </p>
-            <p>
-              Son procesos que toman tiempo y dependen del recorrido subjetivo de cada persona. Lo que va apareciendo en el trabajo terapéutico no está determinado de antemano — depende de cada consultante, de su proceso, de lo que la propia experiencia trae.
-            </p>
-            <p>
-              El encuadre está para sostener ese trabajo: sesiones semanales, pago previo, disponibilidad horaria acordada. No existe compromiso afectivo de mi parte — sí compromiso clínico. Me encuadro en base al Código Ético del Colegio de Psicólogos de Chile.
-            </p>
-            <p>
-              Experiencia clínica supervisada. Supervisión en curso. Cursando Magíster en Psicología Clínica. Me dedico exclusivamente al trabajo clínico.
-            </p>
-            <div class="pull-quote">
-              "Escucho más de lo que hablo. Analizo e interpreto, pero sin imponer una lectura única."
-            </div>
-          </div>
-        </section>
-
-        <section class="rates" aria-labelledby="fees-title">
-          <div class="section-label">Valor y encuadre</div>
-          <h2 id="fees-title">Información clara, sin letra chica.</h2>
-          <div class="rates-layout">
-            <div>
-              <div class="price-line"><span>Sesión individual / 50 minutos</span><span class="price">$15.000 CLP</span></div>
-              <div class="price-line"><span>Frecuencia</span><span class="price">Semanal o a convenir</span></div>
-              <div class="price-line"><span>Modalidad</span><span class="price">Google Meet</span></div>
-            </div>
-            <div>
-              <p>
-                El pago se realiza antes de cada sesión por transferencia bancaria. La coordinación del pago se hace por WhatsApp, para que al momento de la sesión el foco esté en el trabajo terapéutico.
-              </p>
-              <p>
-                Para reagendar se solicita avisar con al menos 24 horas de anticipación.
-              </p>
-            </div>
-          </div>
-        </section>
+    <section id="te-resuena" class="resuena-section">
+      <div class="container">
+        <h2>¿Te resuena algo de esto?</h2>
+        <div class="resuena-grid">
+          <div class="resuena-item">Sientes que algo no está bien, pero no sabes exactamente qué es.</div>
+          <div class="resuena-item">Te cuesta sostener relaciones o te repiten patrones que no entiendes.</div>
+          <div class="resuena-item">Llevas tiempo funcionando, pero sintiéndote vacío o desconectado.</div>
+          <div class="resuena-item">Quieres entender lo que te pasa, no solo aprender a manejarlo.</div>
+          <div class="resuena-item">Nunca has ido a terapia y no sabes bien por dónde empezar.</div>
+          <div class="resuena-item">Ya fuiste a terapia antes y sientes que faltó algo más profundo.</div>
+        </div>
+        <p class="resuena-cierre">Si algo de esto te suena, este espacio puede ser para ti.</p>
       </div>
+    </section>
 
-      <div class="right-column">
-        <section class="approach" aria-labelledby="approach-title">
-          <div>
-            <div class="section-label">Enfoque</div>
-            <h2 id="approach-title">Atención a lo que se repite, a lo que no se dice, a lo que no encuentra forma.</h2>
-          </div>
-          <div>
-            <h3>Cómo se desarrolla el trabajo</h3>
-            <p>
-              La terapia aquí no está orientada a dar consejos ni a seguir protocolos. El énfasis está en comprender cómo el malestar actual tiene raíces en la historia, los vínculos y lo que permanece sin elaborar.
-            </p>
-            <p>
-              No trabajo desde la obligación con ningún enfoque técnico. Lo que vaya apareciendo en el proceso depende de cada consultante — de su disponibilidad, de su historia, de lo que la experiencia trae.
-            </p>
-          </div>
-        </section>
+    <section class="section section-how" id="como-funciona">
+      <div class="container">
+        <div class="how-header">
+          <h2 class="section-title">¿Cómo funciona?</h2>
+          <p>Sigue estos pasos para agendar tu sesión de manera rápida y segura.</p>
+        </div>
 
-        <section class="booking" id="contacto" aria-labelledby="booking-title">
-          <div>
-            <div class="section-label">Contacto</div>
-            <h2 id="booking-title">Comenzar con una consulta breve.</h2>
-            <a class="booking-cta" href="https://wa.me/56976449957?text=Hola%20Víctor,%20quisiera%20consultar%20por%20una%20sesión%20online." target="_blank">Escribir por WhatsApp</a><br><br>
-            <a class="booking-cta" href="https://calendar.app.google/dQKob1ggiH3iBzZz9" target="_blank">Agendar sesión</a><br><br>
-            <a class="booking-cta" href="https://forms.gle/H3sKc87ch3qW783m7" target="_blank">Formulario de ingreso</a>
-          </div>
-          <div>
-            <h3>Qué incluir</h3>
-            <p>
-              Una consulta breve es suficiente para comenzar. Puedes mencionar qué te trae a terapia en este momento, si buscas sesiones semanales o con otra frecuencia, y tu disponibilidad horaria general.
-            </p>
-            <p>
-              También puedes escribir directamente al correo: <a href="mailto:v.sandoval.18@gmail.com" style="border-bottom: 1px solid currentColor;">v.sandoval.18@gmail.com</a>
-            </p>
-            <p class="aside-note">
-              Si tienes dudas antes de agendar, puedes escribir por WhatsApp sin compromiso.
-            </p>
-          </div>
-        </section>
+        <div class="steps-grid">
+          <article class="step-card" data-aos="fade-up" data-aos-delay="0">
+            <div class="step-number">1</div>
+            <div class="step-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="8" r="3.5"></circle>
+                <path d="M5 20a7 7 0 0 1 14 0"></path>
+                <rect x="3" y="3" width="18" height="18" rx="3"></rect>
+              </svg>
+            </div>
+            <h3>Completa tus datos básicos</h3>
+            <p>Ingresa tu información principal en el formulario de ingreso para preparar tu primera sesión.</p>
+          </article>
 
-        <section class="faq" aria-labelledby="faq-title">
-          <div class="section-label">Preguntas frecuentes</div>
-          <h2 id="faq-title">FAQ</h2>
-          <div class="faq-list">
-            <details class="faq-item">
-              <summary><span>¿Cómo se realiza el pago?</span></summary>
-              <p>Por transferencia bancaria antes de la sesión. La coordinación del pago se hace por WhatsApp.</p>
-            </details>
-            <details class="faq-item">
-              <summary><span>¿Puedo reagendar?</span></summary>
-              <p>Sí, avisando con al menos 24 horas de anticipación para reprogramar la sesión.</p>
-            </details>
-            <details class="faq-item">
-              <summary><span>¿Cómo se cuidan mis datos?</span></summary>
-              <p>La información del formulario se usa solo para coordinar la atención y mantener contacto clínico. Las sesiones se realizan por plataforma segura.</p>
-            </details>
-            <details class="faq-item">
-              <summary><span>¿Qué pasa en la primera sesión?</span></summary>
-              <p>Es un espacio para conocernos. Revisamos el motivo de consulta, las expectativas y acordamos el encuadre de trabajo.</p>
-            </details>
-            <details class="faq-item">
-              <summary><span>¿Necesito estar en crisis para empezar?</span></summary>
-              <p>No. Muchas personas comienzan terapia porque algo se siente repetitivo, estrecho o costoso emocionalmente, mucho antes de que se convierta en una emergencia.</p>
-            </details>
-          </div>
-        </section>
-      </div>
-    </main>
+          <article class="step-card" data-aos="fade-up" data-aos-delay="150">
+            <div class="step-number">2</div>
+            <div class="step-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <rect x="3" y="5" width="18" height="16" rx="2"></rect>
+                <path d="M8 3v4M16 3v4M3 10h18"></path>
+                <path d="M8 14h3M13 14h3M8 17h3"></path>
+              </svg>
+            </div>
+            <h3>Elige tu horario online</h3>
+            <p>Selecciona el día y la hora que mejor se adapten a tu disponibilidad desde la agenda online.</p>
+          </article>
 
-    <footer class="foot">
-      <div>
-        <strong>Víctor Sandoval</strong><br>
-        Psicólogo clínico<br>
-        Atención online para personas adultas en Chile
-        <div class="emergencia">
-          <strong>Urgencias:</strong> Si te encuentras en riesgo inmediato o atravesando una crisis severa, acude al servicio de urgencia más cercano. Este espacio es de atención ambulatoria y no reemplaza dispositivos de emergencia.
+          <article class="step-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="step-number">3</div>
+            <div class="step-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M3 7h18v10H3z"></path>
+                <path d="M3 7l9 7 9-7"></path>
+                <path d="m9 12 2 2 4-4"></path>
+              </svg>
+            </div>
+            <h3>Recibe confirmación y enlace</h3>
+            <p>Te llegará un correo de confirmación con los detalles y el enlace para conectarte a la sesión.</p>
+          </article>
+        </div>
+
+        <div class="steps-cta">
+          <a class="btn btn-primary" href="https://forms.gle/H3sKc87ch3qW783m7" target="_blank" rel="noopener noreferrer">Comenzar ahora</a>
         </div>
       </div>
-      <div>
-        <strong>Contacto</strong><br>
-        <a href="mailto:v.sandoval.18@gmail.com">v.sandoval.18@gmail.com</a><br>
-        <a href="https://wa.me/56976449957" target="_blank">WhatsApp: +56 9 7644 9957</a>
+    </section>
+
+    <section id="valor-sesion" class="valor-section">
+      <div class="container valor-grid">
+        <div class="valor-card">
+          <h2>Valor de la sesión</h2>
+          <div class="valor-numero">$15.000 <span>CLP</span></div>
+          <ul class="valor-checks">
+            <li><span class="check">✓</span> Sesiones individuales de 50 minutos</li>
+            <li><span class="check">✓</span> Modalidad 100% online vía Google Meet</li>
+            <li><span class="check">✓</span> Pago vía transferencia electrónica</li>
+            <li><span class="check">✓</span> Frecuencia semanal o a convenir</li>
+          </ul>
+        </div>
+        <div class="valor-whatsapp">
+          <h3>¿Deseas consultar algo primero?</h3>
+          <p>Escríbeme por WhatsApp y te respondo a la brevedad.</p>
+          <textarea id="wa-mensaje" placeholder="Escribe aquí tu consulta o duda..."></textarea>
+          <button onclick="window.open('https://wa.me/56976449957?text=' + encodeURIComponent(document.getElementById('wa-mensaje').value || 'Hola Víctor, quisiera consultar por una sesión online.'), '_blank')" class="btn-whatsapp">
+            ➤ Enviar a WhatsApp
+          </button>
+        </div>
       </div>
-      <div>
-        <strong>Agenda</strong><br>
-        <a href="https://calendar.app.google/dQKob1ggiH3iBzZz9" target="_blank">Agendar sesión</a><br>
-        <a href="https://forms.gle/H3sKc87ch3qW783m7" target="_blank">Formulario de ingreso</a><br><br>
-        © 2026 Víctor Sandoval
+    </section>
+
+
+    <section id="sobre-mi">
+      <div class="sobre-mi-wrapper">
+        <div class="sobre-mi-foto">
+          <img src="docs/victor-sandoval.png" alt="Víctor Sandoval, psicólogo clínico" />
+        </div>
+        <div class="sobre-mi-texto">
+          <h2>Víctor Sandoval</h2>
+          <p class="sobre-subtitulo">Psicólogo clínico · Atención online</p>
+          <p>Soy psicólogo clínico. Trabajo de forma online con personas adultas, en un encuadre de orientación psicoanalítica.</p>
+          <p>Mi trabajo no está orientado a resolver síntomas ni a vender bienestar. Está orientado a abrir un espacio donde lo que aparece pueda ser escuchado — el malestar incluido. Sin apuro, sin reducirlo a una categoría, sin buscar la respuesta rápida.</p>
+          <p>Son procesos que toman tiempo y dependen del recorrido subjetivo de cada persona. Lo que va apareciendo en el trabajo terapéutico no está determinado de antemano — depende de cada consultante, de su proceso, de lo que la propia experiencia trae.</p>
+          <p>El encuadre está para sostener ese trabajo: sesiones semanales, pago previo, disponibilidad horaria acordada. No existe compromiso afectivo de mi parte — sí compromiso clínico. Me encuadro en base al Código Ético del Colegio de Psicólogos de Chile.</p>
+          <p>Escucho más de lo que hablo. Analizo e interpreto, pero sin imponer una lectura única.</p>
+          <div class="sobre-credencial">Experiencia clínica supervisada · Supervisión en curso · Magíster en Psicología Clínica (en curso) · RNS N° 881427</div>
+        </div>
       </div>
-    </footer>
-  </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <h2 class="section-title">Preguntas frecuentes</h2>
+        <div class="faq-grid">
+          <article class="faq-card" data-aos="fade-up" data-aos-delay="0">
+            <h3>¿Cómo se realiza el pago?</h3>
+            <p>Luego de agendar, recibirás indicaciones de transferencia bancaria. La sesión se confirma con pago previo.</p>
+          </article>
+          <article class="faq-card" data-aos="fade-up" data-aos-delay="100">
+            <h3>¿Puedo reagendar?</h3>
+            <p>Si necesitas reagendar, avisa con al menos 24 horas de anticipación para reprogramar tu sesión.</p>
+          </article>
+          <article class="faq-card" data-aos="fade-up" data-aos-delay="200">
+            <h3>¿Cómo se cuidan mis datos?</h3>
+            <p>La información del formulario se usa solo para coordinar tu atención y mantener contacto clínico.</p>
+          </article>
+          <article class="faq-card" data-aos="fade-up" data-aos-delay="300">
+            <h3>¿Qué pasa en la primera sesión?</h3>
+            <p>Revisamos tu motivo de consulta, expectativas y acordamos el encuadre de trabajo.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer-dark">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">Víctor Sandoval | Psicólogo</div>
+        <div class="footer-emergencia">
+          <p class="emergencia-titulo">Aviso de urgencia</p>
+          <p>Si te encuentras en riesgo inmediato o crisis severa, acude al servicio de urgencia más cercano. Este espacio es de atención ambulatoria y no reemplaza dispositivos de emergencia.</p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <div>
+          <h5>Contacto</h5>
+          <ul>
+            <li><a href="mailto:v.sandoval.18@gmail.com">Email</a></li>
+            <li><a href="https://wa.me/56976449957" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Navegación</h5>
+          <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#sobre-mi">Sobre mí</a></li>
+            <li><a href="#faq">Preguntas frecuentes</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-cta">
+        <h5>¿Listo para comenzar?</h5>
+        <a href="https://calendar.app.google/dQKob1ggiH3iBzZz9" target="_blank" rel="noopener noreferrer" class="btn-footer">AGENDAR SESIÓN</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Víctor Sandoval · Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 650, once: true, offset: 60 });
+
+    const header = document.querySelector('.site-header');
+    const navToggle = document.querySelector('[data-nav-toggle]');
+    const nav = document.querySelector('[data-nav]');
+
+    const setHeaderState = () => {
+      if (window.scrollY > 20) {
+        header.classList.add('is-scrolled');
+      } else {
+        header.classList.remove('is-scrolled');
+      }
+    };
+
+    setHeaderState();
+    window.addEventListener('scroll', setHeaderState);
+
+    if (navToggle && nav) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = nav.classList.toggle('is-open');
+        navToggle.setAttribute('aria-expanded', isOpen);
+      });
+    }
+
+    const whatsappForm = document.querySelector('[data-whatsapp-form]');
+
+    if (whatsappForm) {
+      whatsappForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const formData = new FormData(whatsappForm);
+        const comment = String(formData.get('comment') || '').trim();
+
+        if (!comment) {
+          return;
+        }
+
+        const message = `Hola Víctor, te comparto este comentario antes de agendar:
+
+${comment}`;
+        const whatsappUrl = `https://wa.me/56976449957?text=${encodeURIComponent(message)}`;
+
+        window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+      });
+    }
+  </script>
 </body>
 </html>
