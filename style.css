@@ -557,7 +557,7 @@ img {
 }
 
 .sobre-mi-foto {
-  flex: 0 0 40%;
+  flex: 0 0 52%;
   overflow: hidden;
 }
 
@@ -713,18 +713,6 @@ img {
 .valor-whatsapp textarea { width: 100%; min-height: 140px; border: 1px solid #cdd9cd; border-radius: 10px; padding: 14px; font-family: 'Questrial', sans-serif; font-size: 0.95rem; resize: none; background: white; box-sizing: border-box; }
 .btn-whatsapp { background: #25D366; color: white; border: none; border-radius: 30px; padding: 16px; font-size: 1rem; font-weight: bold; cursor: pointer; width: 100%; }
 
-/* ===== Servicios ===== */
-.servicios-section { background: white; padding: 80px 40px; }
-.servicios-grid { display: flex; gap: 60px; max-width: 960px; margin: 0 auto; align-items: center; }
-.servicios-texto { flex: 1; }
-.servicios-tag { display: inline-block; background: #eef3ee; color: #5a7a5a; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; margin-bottom: 16px; }
-.servicios-texto h2 { margin-bottom: 16px; }
-.servicios-texto p { color: #555; line-height: 1.8; margin-bottom: 24px; }
-.servicios-registro { display: flex; align-items: flex-start; gap: 12px; background: #f5f3ef; padding: 16px; border-radius: 10px; font-size: 0.85rem; color: #444; }
-.servicios-registro span { color: #5a7a5a; font-size: 1.2rem; margin-top: 2px; }
-.servicios-iconos { flex: 0 0 280px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-.servicio-item { background: #f5f3ef; border-radius: 12px; padding: 28px; text-align: center; font-size: 1.8rem; }
-.servicio-item p { font-size: 0.85rem; color: #444; margin-top: 8px; font-family: 'Questrial', sans-serif; }
 
 /* ===== Footer nuevo ===== */
 .footer-dark { background: #1e2d1e; color: #c8c2b8; padding: 60px 40px 0; }
