@@ -8,7 +8,7 @@
   --accent-dark: #4a6a4a;
   --border-soft: #e5e0d8;
   --shadow-soft: 0 20px 40px rgba(0, 0, 0, 0.08);
-  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-serif: "DM Serif Display", Georgia, serif;
   --font-sans: "Questrial", sans-serif;
 }
 
@@ -30,7 +30,8 @@ body {
 }
 
 h1, h2, h3 {
-  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-family: 'DM Serif Display', serif;
+  font-weight: 400;
 }
 
 h1 {
