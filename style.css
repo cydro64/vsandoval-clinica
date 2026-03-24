@@ -1,4 +1,5 @@
 :root {
+  color-scheme: light;
   --bg-main: #fffcf9;
   --bg-alt: #f7f5f2;
   --text-main: #333333;
@@ -567,6 +568,20 @@ img {
   background: var(--accent);
   color: var(--text-light);
   padding: 70px 0 40px;
+}
+
+.footer-urgent {
+  background: #1e293b;
+  color: #f1f5f9;
+  padding: 1rem 1.25rem;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.footer-urgent p {
+  margin: 0;
 }
 
 .site-footer a {
