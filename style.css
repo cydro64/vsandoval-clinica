@@ -55,6 +55,43 @@ img {
   background: var(--bg-alt);
 }
 
+.resuena-section {
+  background-color: #f5f0eb;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.resuena-section h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  margin-bottom: 40px;
+}
+
+.resuena-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  max-width: 860px;
+  margin: 0 auto 32px;
+}
+
+.resuena-item {
+  background: white;
+  border-radius: 12px;
+  padding: 20px 24px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #333;
+  text-align: left;
+}
+
+.resuena-cierre {
+  font-style: italic;
+  color: #5a7a5a;
+  font-size: 1rem;
+  margin-top: 8px;
+}
+
 .section-how {
   background: #f7f1e6;
 }
