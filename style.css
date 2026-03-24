@@ -530,22 +530,65 @@ img {
   font-size: 0.9rem;
 }
 
-.about-layout {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 60px;
-  align-items: center;
+.sobre-mi-section {
+  padding: 80px 0;
 }
 
-.about-text h2 {
+.sobre-mi-layout {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+}
+
+.sobre-mi-texto {
+  flex: 1;
+}
+
+.sobre-mi-texto h2 {
   font-family: var(--font-serif);
   font-size: clamp(2rem, 3vw, 2.6rem);
   margin-bottom: 16px;
 }
 
-.about-photo img {
-  border-radius: 26px;
-  box-shadow: var(--shadow-soft);
+.sobre-tag {
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #5a7a5a;
+  border: 1px solid #5a7a5a;
+  border-radius: 20px;
+  padding: 4px 12px;
+  margin-bottom: 20px;
+}
+
+.sobre-credencial {
+  margin-top: 28px;
+  padding-left: 14px;
+  border-left: 2px solid #a0bfa0;
+  font-size: 0.78rem;
+  color: #7a9a7a;
+  line-height: 1.6;
+}
+
+.sobre-mi-foto {
+  flex-shrink: 0;
+}
+
+.foto-circulo {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #b8ceb8;
+}
+
+.foto-circulo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 10%;
+  filter: grayscale(100%);
 }
 
 .faq-grid {
@@ -687,11 +730,17 @@ img {
     gap: 20px;
   }
 
-  .about-layout {
+  .sobre-mi-layout {
+    flex-direction: column;
     gap: 32px;
+    text-align: center;
   }
 
-  .about-photo {
+  .sobre-credencial {
+    text-align: left;
+  }
+
+  .sobre-mi-foto {
     order: -1;
   }
 }
