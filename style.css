@@ -227,7 +227,20 @@ img {
   align-items: center;
   text-align: center;
   padding: 160px 0 110px;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: -6%;
   background: url("docs/imagenportada.jpg") center/cover no-repeat;
+  animation: heroZoom 14s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+@keyframes heroZoom {
+  from { transform: scale(1); }
+  to   { transform: scale(1.08); }
 }
 
 .hero-overlay {
@@ -244,15 +257,17 @@ img {
 
 .hero-eyebrow {
   text-transform: uppercase;
-  letter-spacing: 0.16em;
-  font-size: 0.8rem;
-  margin-bottom: 16px;
+  letter-spacing: 0.22em;
+  font-size: 0.78rem;
+  margin-bottom: 20px;
   color: var(--accent);
 }
 
 .hero h1 {
   font-family: var(--font-serif);
-  font-size: clamp(2.5rem, 4vw, 3.4rem);
+  font-size: clamp(3rem, 5vw, 4.2rem);
+  line-height: 1.12;
+  letter-spacing: -0.01em;
   margin-bottom: 20px;
 }
 
@@ -648,5 +663,6 @@ img {
   * {
     scroll-behavior: auto;
     transition: none !important;
+    animation: none !important;
   }
 }
