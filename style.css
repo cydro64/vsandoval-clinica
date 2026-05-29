@@ -669,7 +669,18 @@ img {
 
   .sobre-mi-foto {
     flex: none;
-    height: 300px;
+    height: auto;
+    background: #1e2d1e;
+    padding: 28px 0 0;
+  }
+
+  .sobre-mi-foto img {
+    width: min(78%, 320px);
+    height: auto;
+    max-height: none;
+    margin: 0 auto;
+    object-fit: contain;
+    object-position: center bottom;
   }
 
   .sobre-mi-texto {
