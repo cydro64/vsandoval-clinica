@@ -252,6 +252,19 @@ img {
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
 }
 
+.btn-secondary {
+  background-color: transparent;
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.btn-secondary:hover {
+  background-color: var(--accent);
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
 .nav-toggle {
   display: none;
   flex-direction: column;
@@ -342,7 +355,7 @@ img {
 
 .steps-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 28px;
 }
 
@@ -408,7 +421,11 @@ img {
 
 .steps-cta {
   margin-top: 36px;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
 }
 
 #sobre-mi {
@@ -473,7 +490,7 @@ img {
   border-left: 2px solid #4a6a4a;
   font-family: sans-serif;
   font-size: 0.75rem;
-  color: #6a8a6a;
+  color: #8aaa8a;
   line-height: 1.7;
 }
 
@@ -650,7 +667,32 @@ img {
   line-height: 1.6;
   max-width: 640px;
   margin: 0 auto;
-  color: var(--color-text, #e8e8e0);
-  opacity: 0.85;
+  color: var(--text-main);
+  opacity: 0.75;
   quotes: none;
+}
+
+/* ===== Bloque admisión ===== */
+.admision-block {
+  background: #eef3ee;
+  padding: 56px 0;
+  text-align: center;
+}
+
+.admision-inner {
+  max-width: 600px;
+}
+
+.admision-block h3 {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.admision-block p {
+  color: #444;
+  font-size: 0.95rem;
+  line-height: 1.75;
+  margin: 0 auto 24px;
 }
