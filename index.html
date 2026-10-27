@@ -61,12 +61,11 @@
     <div class="container header-content">
       <a class="logo" href="#inicio">Víctor Sandoval <span>| Psicólogo</span></a>
       <nav class="site-nav" id="menu" aria-label="Navegación principal">
-        <a href="#terapia-online">Terapia online</a>
-        <a href="#como-funciona">Cómo funciona</a>
-        <a href="#valor-sesion">Valor sesión</a>
-        <a href="#encuadre">Encuadre</a>
         <a href="#sobre-mi">Sobre mí</a>
-        <a href="#faq">Preguntas frecuentes</a>
+        <a href="#como-funciona">Proceso</a>
+        <a href="#valor-sesion">Valor</a>
+        <a href="#encuadre">Encuadre</a>
+        <a href="#faq">Preguntas</a>
       </nav>
       <div class="header-actions">
         <a class="icon-button icon-whatsapp" href="https://wa.me/56976449957?text=Hola%20Víctor,%20quisiera%20consultar%20por%20una%20sesión%20online." target="_blank" rel="noopener noreferrer" aria-label="Escribir por WhatsApp" title="WhatsApp">
@@ -83,28 +82,40 @@
   </header>
 
   <main id="contenido">
+    <!-- 1. Portada: texto a la izquierda, imagen a la derecha -->
     <section class="hero" id="terapia-online">
-      <div class="hero-bg" aria-hidden="true"></div>
-      <div class="hero-overlay" aria-hidden="true"></div>
-      <div class="container hero-content">
-        <p class="hero-eyebrow">Psicoterapia individual online</p>
-        <h1>Un espacio para decir eso que insiste, pero no encuentra lugar.</h1>
-        <p>No necesitas tener todo claro para empezar.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary btn-lg" href="https://calendar.app.google/Rd7sQ7G3Cxv1mTEg8" target="_blank" rel="noopener noreferrer">
-            <span class="btn-logo"><svg aria-hidden="true"><use href="#i-calendar" /></svg></span>Agendar primera sesión
-          </a>
+      <div class="container hero-grid">
+        <div class="hero-texto">
+          <p class="eyebrow">Psicoterapia individual online</p>
+          <h1>Un espacio para decir eso que insiste, pero no encuentra lugar.</h1>
+          <p class="hero-lead">No necesitas tener todo claro para empezar.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary btn-lg" href="https://calendar.app.google/Rd7sQ7G3Cxv1mTEg8" target="_blank" rel="noopener noreferrer">
+              <span class="btn-logo"><svg aria-hidden="true"><use href="#i-calendar" /></svg></span>Agendar primera sesión
+            </a>
+            <a class="hero-link" href="https://wa.me/56976449957?text=Hola%20Víctor,%20quisiera%20consultar%20por%20una%20sesión%20online." target="_blank" rel="noopener noreferrer">
+              <svg aria-hidden="true"><use href="#i-whatsapp" /></svg>¿Tienes dudas? Escríbeme por WhatsApp
+            </a>
+          </div>
+          <p class="hero-nota">Primera sesión para evaluar si este espacio hace sentido para ti.</p>
         </div>
-        <p class="hero-nota">Primera sesión para evaluar si este espacio hace sentido para ti.</p>
-        <a class="hero-link" href="https://wa.me/56976449957?text=Hola%20Víctor,%20quisiera%20consultar%20por%20una%20sesión%20online." target="_blank" rel="noopener noreferrer">
-          <svg aria-hidden="true"><use href="#i-whatsapp" /></svg>¿Tienes dudas? Escríbeme por WhatsApp
-        </a>
+        <figure class="hero-imagen">
+          <img src="docs/imagenportada.jpg" alt="" width="1200" height="1499" fetchpriority="high" />
+        </figure>
       </div>
+      <ul class="container credenciales" role="list">
+        <li><strong>Online</strong><span>Google Meet</span></li>
+        <li><strong>50 minutos</strong><span>Semanal o a convenir</span></li>
+        <li><strong>Psicodinámica</strong><span>Orientación clínica</span></li>
+        <li><strong>RNPS N° 881427</strong><span>Superintendencia de Salud</span></li>
+      </ul>
     </section>
 
-    <section id="te-resuena" class="section section-tint resuena-section">
-      <div class="container">
-        <h2>Tal vez te pasa algo de esto:</h2>
+    <!-- 2. Te resuena -->
+    <section id="te-resuena" class="section bg-tint">
+      <div class="container estrecho">
+        <p class="eyebrow">Para quién es</p>
+        <h2 class="section-title">Tal vez te pasa algo de esto</h2>
         <ul class="resuena-grid" role="list">
           <li class="resuena-item" data-reveal>Hay algo que se repite y no sabes por qué</li>
           <li class="resuena-item" data-reveal>Piensas mucho, pero no logras salir de lo mismo</li>
@@ -115,28 +126,51 @@
       </div>
     </section>
 
-    <section class="section section-tint" id="como-funciona">
+    <!-- 3. Sobre mí -->
+    <section id="sobre-mi" class="sobre-mi">
+      <div class="container sobre-mi-grid">
+        <div class="sobre-mi-foto">
+          <img src="docs/victor-sandoval.png" alt="Víctor Sandoval, psicólogo clínico" width="447" height="590" decoding="async" />
+        </div>
+        <div class="sobre-mi-texto">
+          <p class="eyebrow eyebrow-claro">Sobre mí</p>
+          <h2>Víctor Sandoval</h2>
+          <p class="sobre-subtitulo">Psicólogo clínico · Atención online</p>
+          <p>Soy psicólogo clínico con orientación psicodinámica, actualmente cursando el Magíster en Psicología Clínica.</p>
+          <p>Trabajo con personas que, aun comprendiendo mucho de lo que les pasa, sienten que algo no cambia.</p>
+          <p>La terapia no apunta a ordenar lo que ya sabes, sino a producir un desplazamiento en eso que se repite.</p>
+          <p>Este no es un espacio de consejos ni de soluciones inmediatas. Es un espacio de trabajo con la palabra.</p>
+          <p>Mi lugar no es completar lo que falta, sino sostener un encuadre donde algo de eso que se repite pueda empezar a moverse.</p>
+          <p>Escucho más de lo que hablo. Analizo e interpreto, pero sin imponer una lectura única.</p>
+          <div class="sobre-credencial">Experiencia clínica supervisada · Supervisión en curso · RNS N° 881427</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Cómo funciona + ficha de admisión -->
+    <section class="section" id="como-funciona">
       <div class="container">
-        <div class="how-header">
-          <h2 class="section-title">¿Cómo funciona?</h2>
+        <div class="section-head">
+          <p class="eyebrow">Proceso</p>
+          <h2 class="section-title">Cómo empezar, en cuatro pasos</h2>
           <p>El orden es: agenda → ficha de admisión → pago → confirmación y enlace. Primero eliges una hora disponible; después completas una ficha breve para cuidar el encuadre antes del primer encuentro.</p>
         </div>
 
         <ol class="steps-grid" role="list">
           <li class="step-card" data-reveal>
-            <div class="step-number">1</div>
+            <span class="step-number">1</span>
             <div class="step-icon step-icon-calendar" aria-hidden="true"><svg><use href="#i-calendar" /></svg></div>
             <h3>Agenda una primera sesión</h3>
             <p>Este es el primer paso: elige un horario disponible para iniciar el proceso.</p>
           </li>
           <li class="step-card" data-reveal>
-            <div class="step-number">2</div>
+            <span class="step-number">2</span>
             <div class="step-icon step-icon-forms" aria-hidden="true"><svg><use href="#i-forms" /></svg></div>
             <h3>Completa la ficha de admisión</h3>
             <p>Luego de reservar la hora, completa algunos antecedentes básicos para cuidar el encuadre clínico.</p>
           </li>
           <li class="step-card" data-reveal>
-            <div class="step-number">3</div>
+            <span class="step-number">3</span>
             <div class="step-icon" aria-hidden="true">
               <svg class="trazo" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2" /><line x1="2" y1="10" x2="22" y2="10" /><line x1="6" y1="15" x2="10" y2="15" /></svg>
             </div>
@@ -144,36 +178,48 @@
             <p>Después de enviar la ficha, recibirás las indicaciones de pago para confirmar la hora reservada.</p>
           </li>
           <li class="step-card" data-reveal>
-            <div class="step-number">4</div>
+            <span class="step-number">4</span>
             <div class="step-icon step-icon-meet" aria-hidden="true"><svg><use href="#i-meet" /></svg></div>
             <h3>Nos conectamos</h3>
             <p>Una vez confirmada la sesión, recibirás el enlace de Google Meet.</p>
           </li>
         </ol>
 
-        <div class="steps-cta">
-          <a class="btn btn-primary btn-lg" href="https://calendar.app.google/Rd7sQ7G3Cxv1mTEg8" target="_blank" rel="noopener noreferrer">
-            <span class="btn-logo"><svg aria-hidden="true"><use href="#i-calendar" /></svg></span>Agendar sesión
-          </a>
+        <div class="admision" data-reveal>
+          <div class="admision-texto">
+            <h3>La ficha de admisión</h3>
+            <p>Primero agenda tu hora. Después de reservarla, completa esta ficha breve. Luego recibirás las indicaciones de pago y, una vez confirmada la sesión, el enlace de Google Meet. La ficha ayuda a cuidar el encuadre antes de la primera sesión; no reemplaza la atención clínica ni constituye evaluación de urgencia.</p>
+          </div>
+          <div class="admision-acciones">
+            <a class="btn btn-primary btn-lg" href="https://calendar.app.google/Rd7sQ7G3Cxv1mTEg8" target="_blank" rel="noopener noreferrer">
+              <span class="btn-logo"><svg aria-hidden="true"><use href="#i-calendar" /></svg></span>Agendar sesión
+            </a>
+            <a class="btn btn-secondary btn-lg" href="https://forms.gle/F1bVYEauxSLdY1Mb9" target="_blank" rel="noopener noreferrer">
+              <span class="btn-logo"><svg aria-hidden="true"><use href="#i-forms" /></svg></span>Completar formulario de admisión
+            </a>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="valor-sesion" class="section valor-section">
+    <!-- 5. Valor de la sesión -->
+    <section id="valor-sesion" class="section bg-tint">
       <div class="container valor-grid">
-        <div class="valor-card">
-          <h2>Valor de la sesión</h2>
+        <div class="valor-card" data-reveal>
+          <p class="eyebrow">Valor de la sesión</p>
+          <h2>Sesión individual online</h2>
           <ul class="valor-checks" role="list">
             <li><span class="check" aria-hidden="true">✓</span> Modalidad: Online (Google Meet)</li>
             <li><span class="check" aria-hidden="true">✓</span> Duración: 50 minutos</li>
             <li><span class="check" aria-hidden="true">✓</span> Frecuencia: semanal o a convenir</li>
-            <li><span class="check" aria-hidden="true">✓</span> Valor: $15.000 CLP</li>
+            <li class="valor-precio"><span class="check" aria-hidden="true">✓</span> Valor: <strong>$15.000 CLP</strong></li>
           </ul>
           <a class="btn btn-primary btn-lg" href="https://calendar.app.google/Rd7sQ7G3Cxv1mTEg8" target="_blank" rel="noopener noreferrer">
             <span class="btn-logo"><svg aria-hidden="true"><use href="#i-calendar" /></svg></span>Agendar sesión
           </a>
         </div>
-        <div class="valor-whatsapp">
+        <div class="valor-whatsapp" data-reveal>
+          <svg class="valor-whatsapp-logo" aria-hidden="true"><use href="#i-whatsapp" /></svg>
           <h3>¿Tienes dudas antes de agendar?</h3>
           <p>Puedes escribirme directamente.</p>
           <a href="https://wa.me/56976449957?text=Hola%20Víctor,%20quisiera%20consultar%20por%20una%20sesión%20online." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-lg">
@@ -183,19 +229,11 @@
       </div>
     </section>
 
-    <section class="admision-block section-tint">
-      <div class="container admision-inner">
-        <h3>Segundo paso: ficha de admisión</h3>
-        <p>Primero agenda tu hora. Después de reservarla, completa esta ficha breve. Luego recibirás las indicaciones de pago y, una vez confirmada la sesión, el enlace de Google Meet. La ficha ayuda a cuidar el encuadre antes de la primera sesión; no reemplaza la atención clínica ni constituye evaluación de urgencia.</p>
-        <a class="btn btn-secondary btn-lg" href="https://forms.gle/F1bVYEauxSLdY1Mb9" target="_blank" rel="noopener noreferrer">
-          <span class="btn-logo"><svg aria-hidden="true"><use href="#i-forms" /></svg></span>Completar formulario de admisión
-        </a>
-      </div>
-    </section>
-
-    <section id="encuadre" class="section section-alt">
+    <!-- 6. Encuadre -->
+    <section id="encuadre" class="section">
       <div class="container">
-        <h2 class="section-title">Encuadre y condiciones</h2>
+        <p class="eyebrow">Encuadre</p>
+        <h2 class="section-title">Condiciones del espacio terapéutico</h2>
         <div class="encuadre-grid">
           <article class="card" data-reveal>
             <h3>Cancelación</h3>
@@ -213,35 +251,11 @@
       </div>
     </section>
 
-    <section id="sobre-mi" class="sobre-mi">
-      <div class="sobre-mi-wrapper">
-        <div class="sobre-mi-foto">
-          <img src="docs/victor-sandoval.png" alt="Víctor Sandoval, psicólogo clínico" width="447" height="590" decoding="async" />
-        </div>
-        <div class="sobre-mi-texto">
-          <h2>Víctor Sandoval</h2>
-          <p class="sobre-subtitulo">Psicólogo clínico · Atención online</p>
-          <p>Soy psicólogo clínico con orientación psicodinámica, actualmente cursando el Magíster en Psicología Clínica.</p>
-          <p>Trabajo con personas que, aun comprendiendo mucho de lo que les pasa, sienten que algo no cambia.</p>
-          <p>La terapia no apunta a ordenar lo que ya sabes, sino a producir un desplazamiento en eso que se repite.</p>
-          <p>Este no es un espacio de consejos ni de soluciones inmediatas. Es un espacio de trabajo con la palabra.</p>
-          <p>Mi lugar no es completar lo que falta, sino sostener un encuadre donde algo de eso que se repite pueda empezar a moverse.</p>
-          <p>Escucho más de lo que hablo. Analizo e interpreto, pero sin imponer una lectura única.</p>
-          <div class="sobre-credencial">Experiencia clínica supervisada · Supervisión en curso · RNS N° 881427</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section seccion-inicio">
-      <div class="container inicio-inner">
-        <p class="inicio-destacado">No necesitas tener todo claro para empezar.</p>
-        <p>La primera sesión es un espacio para ver si este trabajo hace sentido para ti.</p>
-      </div>
-    </section>
-
-    <section class="section section-alt" id="faq">
-      <div class="container">
-        <h2 class="section-title">Preguntas frecuentes</h2>
+    <!-- 7. Preguntas frecuentes -->
+    <section class="section bg-alt" id="faq">
+      <div class="container estrecho">
+        <p class="eyebrow">Preguntas frecuentes</p>
+        <h2 class="section-title">Antes de agendar</h2>
         <div class="faq-list">
           <details class="faq-item" open>
             <summary>¿Cómo se realiza el pago?</summary>
@@ -267,9 +281,20 @@
       </div>
     </section>
 
-    <section class="frase-cierre">
-      <div class="container">
+    <!-- 8. Cierre: frase + invitación -->
+    <section class="cierre">
+      <div class="container cierre-inner">
         <blockquote>A veces, lo que falta no es entender más, sino que algo distinto pueda ser dicho.</blockquote>
+        <p class="cierre-destacado">No necesitas tener todo claro para empezar.</p>
+        <p>La primera sesión es un espacio para ver si este trabajo hace sentido para ti.</p>
+        <div class="cierre-acciones">
+          <a class="btn btn-primary btn-lg" href="https://calendar.app.google/Rd7sQ7G3Cxv1mTEg8" target="_blank" rel="noopener noreferrer">
+            <span class="btn-logo"><svg aria-hidden="true"><use href="#i-calendar" /></svg></span>Agendar primera sesión
+          </a>
+          <a class="btn btn-whatsapp btn-lg" href="https://wa.me/56976449957?text=Hola%20Víctor,%20quisiera%20consultar%20por%20una%20sesión%20online." target="_blank" rel="noopener noreferrer">
+            <svg aria-hidden="true"><use href="#i-whatsapp" /></svg>Escribir por WhatsApp
+          </a>
+        </div>
       </div>
     </section>
   </main>
@@ -352,11 +377,11 @@
         if (nav.classList.contains('is-open') && !e.target.closest('.site-nav, .nav-toggle')) cerrarMenu();
       });
 
-      // Sección actual resaltada en el menú
       const enlaces = [...nav.querySelectorAll('a')];
       const secciones = enlaces.map((a) => document.querySelector(a.getAttribute('href'))).filter(Boolean);
 
       if ('IntersectionObserver' in window) {
+        // Sección actual resaltada en el menú
         const seccionActual = new IntersectionObserver((entradas) => {
           entradas.forEach((en) => {
             if (!en.isIntersecting) return;
