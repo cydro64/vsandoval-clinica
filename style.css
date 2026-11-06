@@ -558,6 +558,15 @@ ol[role="list"] { list-style: none; margin: 0; padding: 0; }
 
 .flujo-pie { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; margin-top: 24px; }
 .flujo-pie .enlace { margin-top: 0; }
+.flujo-pie-solo { justify-content: flex-end; }
+.flujo-botones { display: flex; flex-wrap: wrap; gap: 12px; }
+
+/* Paso 4: qué pasa con el enlace de Meet y el recordatorio */
+.flujo-lista { display: grid; gap: 14px; margin-top: 24px; max-width: 760px; }
+.flujo-lista li { display: flex; align-items: center; gap: 16px; color: var(--texto-suave); }
+.flujo-lista strong { color: var(--texto); font-weight: normal; }
+.flujo-lista .paso-icono { flex: none; width: 40px; height: 40px; border-radius: 10px; }
+.flujo-lista .paso-icono svg { width: 20px; height: 20px; }
 .btn-flecha { width: 16px; height: 16px; margin-left: 8px; }
 
 /* ---------- Valor ---------- */
@@ -802,6 +811,7 @@ ol[role="list"] { list-style: none; margin: 0; padding: 0; }
   .incrustado iframe { height: 760px; }
   .flujo-pie { flex-direction: column-reverse; align-items: stretch; }
   .flujo-pie .btn { width: 100%; }
+  .flujo-botones { flex-direction: column-reverse; }
 
   .tabla div { grid-template-columns: 1fr; gap: 4px; }
   .faq summary { font-size: 1.12rem; min-height: 64px; }
