@@ -412,7 +412,7 @@ ol[role="list"] { list-style: none; margin: 0; padding: 0; }
   border-block: 1px solid var(--borde);
 }
 
-/* Retrato completo, en su proporción original (sin recortar el rostro) */
+/* Retrato completo, en su proporción original (sin recortar el rostro). Al 75 % desde 06-11-2026 (pedido de Victor). */
 .sobre-foto {
   position: relative;
   display: flex;
@@ -421,8 +421,8 @@ ol[role="list"] { list-style: none; margin: 0; padding: 0; }
 }
 
 .sobre-foto img {
-  width: 100%;
-  max-height: 920px;
+  width: 75%;
+  max-height: 690px;
   aspect-ratio: 1200 / 1500;
   object-fit: contain;
   object-position: right center;
@@ -763,7 +763,7 @@ ol[role="list"] { list-style: none; margin: 0; padding: 0; }
 
   .sobre { grid-template-columns: 1fr; }
   .sobre-foto { justify-content: center; }
-  .sobre-foto img { max-height: none; object-position: center; }
+  .sobre-foto img { width: 75%; max-height: none; object-position: center; }
   .sobre-foto::after { background: linear-gradient(0deg, var(--negro) 0%, rgba(11, 16, 12, 0) 22%); }
 
   /* Portada en celular y tablet: imagen completa arriba, texto debajo */
