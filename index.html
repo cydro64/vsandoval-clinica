@@ -64,7 +64,7 @@
       <nav class="menu" id="menu" aria-label="Navegación principal">
         <a href="#lo-que-te-trae">Para quién</a>
         <a href="#sobre-mi">Sobre mí</a>
-        <a href="#como-comenzar">Cómo comenzar</a>
+        <a href="#agendar">Agendar</a>
         <a href="#valor">Valor</a>
         <a href="#encuadre">Encuadre</a>
         <a href="#preguntas">Preguntas</a>
@@ -73,7 +73,7 @@
         <a class="icono-wa" href="https://wa.me/56976449957?text=Hola%20Víctor,%20quisiera%20consultar%20por%20una%20sesión%20online." target="_blank" rel="noopener noreferrer" aria-label="Escribir por WhatsApp" title="WhatsApp">
           <svg aria-hidden="true"><use href="#i-whatsapp" /></svg>
         </a>
-        <a class="btn btn-acento btn-sm" href="https://calendar.app.google/Rd7sQ7G3Cxv1mTEg8" target="_blank" rel="noopener noreferrer">Agendar</a>
+        <a class="btn btn-acento btn-sm" href="#agendar">Agendar</a>
         <button class="menu-boton" type="button" aria-label="Abrir menú" aria-controls="menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -91,7 +91,7 @@
         <h1>Un espacio para decir eso que insiste, pero no encuentra lugar.</h1>
         <p class="portada-lead">No necesitas tener todo claro para empezar.</p>
         <div class="portada-acciones">
-          <a class="btn btn-acento btn-lg" href="https://calendar.app.google/Rd7sQ7G3Cxv1mTEg8" target="_blank" rel="noopener noreferrer">
+          <a class="btn btn-acento btn-lg" href="#agendar">
             <span class="btn-logo"><svg aria-hidden="true"><use href="#i-calendar" /></svg></span>Agendar primera sesión
           </a>
           <a class="btn btn-contorno btn-lg" href="https://wa.me/56976449957?text=Hola%20Víctor,%20quisiera%20consultar%20por%20una%20sesión%20online." target="_blank" rel="noopener noreferrer">
@@ -146,46 +146,103 @@
       </div>
     </section>
 
-    <!-- Cómo comenzar -->
-    <section class="bloque" id="como-comenzar">
+    <!-- Agendar: los cuatro pasos en un solo lugar. La agenda se ve y se usa dentro de la página.
+         Pestañas accesibles (role=tab); el script de abajo las maneja. Sin JavaScript se ven los 4 paneles. -->
+    <section class="bloque" id="agendar">
       <div class="marco">
         <header class="bloque-head">
           <p class="etiqueta">Cómo comenzar</p>
-          <h2>Cuatro pasos</h2>
-          <p>El orden es: agenda → ficha de admisión → pago → confirmación y enlace. Primero eliges una hora disponible; después completas una ficha breve para cuidar el encuadre antes del primer encuentro.</p>
+          <h2>Agenda aquí mismo</h2>
+          <p>Cuatro pasos, sin salir de esta página: eliges una hora, completas una ficha breve, confirmas el pago y recibes el enlace.</p>
         </header>
-        <ol class="mosaico mosaico-4 pasos" role="list">
-          <li class="tile paso" data-reveal>
-            <div class="paso-top"><span class="tile-num">01</span><span class="paso-icono paso-calendar" aria-hidden="true"><svg><use href="#i-calendar" /></svg></span></div>
-            <h3>Agenda una primera sesión</h3>
-            <p>Este es el primer paso: elige un horario disponible para iniciar el proceso.</p>
-            <a class="enlace" href="https://calendar.app.google/Rd7sQ7G3Cxv1mTEg8" target="_blank" rel="noopener noreferrer">Ver horarios<svg aria-hidden="true"><use href="#i-flecha" /></svg></a>
-          </li>
-          <li class="tile paso" data-reveal>
-            <div class="paso-top"><span class="tile-num">02</span><span class="paso-icono paso-forms" aria-hidden="true"><svg><use href="#i-forms" /></svg></span></div>
-            <h3>Completa la ficha de admisión</h3>
-            <p>Luego de reservar la hora, completa algunos antecedentes básicos para cuidar el encuadre clínico.</p>
-            <a class="enlace" href="https://forms.gle/F1bVYEauxSLdY1Mb9" target="_blank" rel="noopener noreferrer">Abrir ficha<svg aria-hidden="true"><use href="#i-flecha" /></svg></a>
-          </li>
-          <li class="tile paso" data-reveal>
-            <div class="paso-top"><span class="tile-num">03</span><span class="paso-icono" aria-hidden="true"><svg class="trazo" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2" /><line x1="2" y1="10" x2="22" y2="10" /><line x1="6" y1="15" x2="10" y2="15" /></svg></span></div>
-            <h3>Confirma el pago previo</h3>
-            <p>Después de enviar la ficha, recibirás las indicaciones de pago para confirmar la hora reservada.</p>
-          </li>
-          <li class="tile paso" data-reveal>
-            <div class="paso-top"><span class="tile-num">04</span><span class="paso-icono paso-meet" aria-hidden="true"><svg><use href="#i-meet" /></svg></span></div>
-            <h3>Nos conectamos</h3>
-            <p>Una vez confirmada la sesión, recibirás el enlace de Google Meet.</p>
-          </li>
-        </ol>
-        <div class="tile tile-ancho" data-reveal>
-          <div>
-            <h3>Segundo paso: ficha de admisión</h3>
-            <p>Primero agenda tu hora. Después de reservarla, completa esta ficha breve. Luego recibirás las indicaciones de pago y, una vez confirmada la sesión, el enlace de Google Meet. La ficha ayuda a cuidar el encuadre antes de la primera sesión; no reemplaza la atención clínica ni constituye evaluación de urgencia.</p>
+
+        <div class="flujo" data-flujo>
+          <div class="flujo-pasos" role="tablist" aria-label="Pasos para comenzar">
+            <button class="flujo-paso" type="button" role="tab" id="tab-hora" aria-controls="panel-hora" aria-selected="true">
+              <span class="paso-icono paso-calendar" aria-hidden="true"><svg><use href="#i-calendar" /></svg></span>
+              <span><span class="flujo-num">Paso 1</span><span class="flujo-nombre">Elige tu hora</span></span>
+            </button>
+            <button class="flujo-paso" type="button" role="tab" id="tab-ficha" aria-controls="panel-ficha" aria-selected="false" tabindex="-1">
+              <span class="paso-icono paso-forms" aria-hidden="true"><svg><use href="#i-forms" /></svg></span>
+              <span><span class="flujo-num">Paso 2</span><span class="flujo-nombre">Ficha de admisión</span></span>
+            </button>
+            <button class="flujo-paso" type="button" role="tab" id="tab-pago" aria-controls="panel-pago" aria-selected="false" tabindex="-1">
+              <span class="paso-icono" aria-hidden="true"><svg class="trazo" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2" /><line x1="2" y1="10" x2="22" y2="10" /><line x1="6" y1="15" x2="10" y2="15" /></svg></span>
+              <span><span class="flujo-num">Paso 3</span><span class="flujo-nombre">Pago previo</span></span>
+            </button>
+            <button class="flujo-paso" type="button" role="tab" id="tab-enlace" aria-controls="panel-enlace" aria-selected="false" tabindex="-1">
+              <span class="paso-icono paso-meet" aria-hidden="true"><svg><use href="#i-meet" /></svg></span>
+              <span><span class="flujo-num">Paso 4</span><span class="flujo-nombre">Nos conectamos</span></span>
+            </button>
           </div>
-          <a class="btn btn-contorno" href="https://forms.gle/F1bVYEauxSLdY1Mb9" target="_blank" rel="noopener noreferrer">
-            <span class="btn-logo"><svg aria-hidden="true"><use href="#i-forms" /></svg></span>Completar formulario de admisión
-          </a>
+
+          <div class="flujo-panel" role="tabpanel" id="panel-hora" aria-labelledby="tab-hora" tabindex="0">
+            <div class="flujo-texto">
+              <h3>Elige un horario disponible</h3>
+              <p>Selecciona el día y la hora que te acomoden. Al reservar se te pedirá tu nombre y correo para enviarte la confirmación.</p>
+            </div>
+            <!-- Página de reservas de Google Calendar (la misma de calendar.app.google/Rd7sQ7G3Cxv1mTEg8). "loading=lazy": se carga recién al acercarse. -->
+            <div class="incrustado">
+              <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ04Ue_FlH1F_BKaUfNRFO9AiELWfU43C-SYRfP5lPwqEOqx5C9GYaMzwX1KCz191X-RLx7Hi2zr?gv=true"
+                      title="Agenda: horarios disponibles" loading="lazy"></iframe>
+            </div>
+            <div class="flujo-pie">
+              <a class="enlace" href="https://calendar.app.google/Rd7sQ7G3Cxv1mTEg8" target="_blank" rel="noopener noreferrer">¿No se ve bien? Abrir la agenda en otra pestaña<svg aria-hidden="true"><use href="#i-flecha" /></svg></a>
+              <button class="btn btn-acento" type="button" data-ir="tab-ficha">Ya reservé: siguiente paso<svg class="btn-flecha" aria-hidden="true"><use href="#i-flecha" /></svg></button>
+            </div>
+          </div>
+
+          <div class="flujo-panel" role="tabpanel" id="panel-ficha" aria-labelledby="tab-ficha" tabindex="0">
+            <div class="flujo-texto">
+              <h3>Completa la ficha de admisión</h3>
+              <p>Luego de reservar la hora, completa algunos antecedentes básicos para cuidar el encuadre antes del primer encuentro. La ficha no reemplaza la atención clínica ni constituye evaluación de urgencia.</p>
+            </div>
+            <!-- La ficha se abre en otra pestaña porque el formulario pide iniciar sesión en Google, y eso no funciona
+                 incrustado. Cuando deje de pedirlo (Google Forms > Configuración > Respuestas), reemplazar esta
+                 tarjeta por:  <div class="incrustado incrustado-ficha"><iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf6hC6CWQ6fq-r6JXOt7j-0N-e-wtP88ROdKiU1FB_a_tQIJQ/viewform?embedded=true" title="Ficha de admisión" loading="lazy"></iframe></div> -->
+            <div class="tile tile-ancho ficha-tarjeta">
+              <div>
+                <h3>Formulario de admisión</h3>
+                <p>Toma unos minutos. Se abre en otra pestaña; al enviarlo, vuelve aquí para ver el paso siguiente.</p>
+              </div>
+              <a class="btn btn-contorno" href="https://forms.gle/F1bVYEauxSLdY1Mb9" target="_blank" rel="noopener noreferrer">
+                <span class="btn-logo"><svg aria-hidden="true"><use href="#i-forms" /></svg></span>Abrir la ficha
+              </a>
+            </div>
+            <div class="flujo-pie">
+              <button class="btn btn-contorno" type="button" data-ir="tab-hora">Volver a la agenda</button>
+              <button class="btn btn-acento" type="button" data-ir="tab-pago">Ya la envié: siguiente paso<svg class="btn-flecha" aria-hidden="true"><use href="#i-flecha" /></svg></button>
+            </div>
+          </div>
+
+          <div class="flujo-panel" role="tabpanel" id="panel-pago" aria-labelledby="tab-pago" tabindex="0">
+            <div class="flujo-texto">
+              <h3>Confirma el pago previo</h3>
+              <p>Después de enviar la ficha, recibirás las indicaciones de transferencia bancaria. La hora queda confirmada con el pago previo.</p>
+            </div>
+            <dl class="tabla flujo-tabla">
+              <div><dt>Valor</dt><dd>$15.000 CLP por sesión de 50 minutos</dd></div>
+              <div><dt>Pago</dt><dd>Transferencia bancaria, previo a la sesión</dd></div>
+              <div><dt>Cancelación</dt><dd>Con al menos 24 horas de aviso (<a href="#encuadre">ver condiciones</a>)</dd></div>
+            </dl>
+            <div class="flujo-pie">
+              <button class="btn btn-contorno" type="button" data-ir="tab-ficha">Volver a la ficha</button>
+              <button class="btn btn-acento" type="button" data-ir="tab-enlace">Siguiente paso<svg class="btn-flecha" aria-hidden="true"><use href="#i-flecha" /></svg></button>
+            </div>
+          </div>
+
+          <div class="flujo-panel" role="tabpanel" id="panel-enlace" aria-labelledby="tab-enlace" tabindex="0">
+            <div class="flujo-texto">
+              <h3>Nos conectamos</h3>
+              <p>Una vez confirmada la sesión, recibirás el enlace de Google Meet. Si tienes dudas en cualquier paso, puedes escribirme directamente.</p>
+            </div>
+            <div class="flujo-pie">
+              <button class="btn btn-contorno" type="button" data-ir="tab-pago">Volver al pago</button>
+              <a class="btn btn-whatsapp" href="https://wa.me/56976449957?text=Hola%20Víctor,%20quisiera%20consultar%20por%20una%20sesión%20online." target="_blank" rel="noopener noreferrer">
+                <svg aria-hidden="true"><use href="#i-whatsapp" /></svg>Escribir por WhatsApp
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -206,7 +263,7 @@
             <div><dt>Pago</dt><dd>Transferencia bancaria, previo a la sesión</dd></div>
           </dl>
           <div class="valor-lado">
-            <a class="btn btn-acento btn-lg btn-bloque" href="https://calendar.app.google/Rd7sQ7G3Cxv1mTEg8" target="_blank" rel="noopener noreferrer">
+            <a class="btn btn-acento btn-lg btn-bloque" href="#agendar">
               <span class="btn-logo"><svg aria-hidden="true"><use href="#i-calendar" /></svg></span>Agendar sesión
             </a>
             <div class="dudas">
@@ -283,7 +340,7 @@
         <blockquote>A veces, lo que falta no es entender más, sino que algo distinto pueda ser dicho.</blockquote>
         <p class="cierre-destacado">No necesitas tener todo claro para empezar.</p>
         <p>La primera sesión es un espacio para ver si este trabajo hace sentido para ti.</p>
-        <a class="btn btn-acento btn-lg" href="https://calendar.app.google/Rd7sQ7G3Cxv1mTEg8" target="_blank" rel="noopener noreferrer">
+        <a class="btn btn-acento btn-lg" href="#agendar">
           <span class="btn-logo"><svg aria-hidden="true"><use href="#i-calendar" /></svg></span>Agendar primera sesión
         </a>
       </div>
@@ -306,7 +363,7 @@
       </div>
       <div>
         <p class="pie-titulo">¿Listo para comenzar?</p>
-        <a class="btn btn-acento btn-bloque" href="https://calendar.app.google/Rd7sQ7G3Cxv1mTEg8" target="_blank" rel="noopener noreferrer">
+        <a class="btn btn-acento btn-bloque" href="#agendar">
           <span class="btn-logo"><svg aria-hidden="true"><use href="#i-calendar" /></svg></span>Agendar sesión
         </a>
       </div>
@@ -316,7 +373,7 @@
 
   <!-- Barra fija en celular: aparece al bajar de la portada -->
   <div class="barra-movil" aria-hidden="true">
-    <a class="btn btn-acento" href="https://calendar.app.google/Rd7sQ7G3Cxv1mTEg8" target="_blank" rel="noopener noreferrer" tabindex="-1">
+    <a class="btn btn-acento" href="#agendar" tabindex="-1">
       <span class="btn-logo"><svg><use href="#i-calendar" /></svg></span>Agendar
     </a>
     <a class="btn btn-whatsapp" href="https://wa.me/56976449957?text=Hola%20Víctor,%20quisiera%20consultar%20por%20una%20sesión%20online." target="_blank" rel="noopener noreferrer" tabindex="-1">
@@ -379,6 +436,40 @@
         new IntersectionObserver(([en]) => barraMovil.classList.toggle('is-visible', !en.isIntersecting)).observe(portada);
       } else {
         document.querySelectorAll('[data-reveal]').forEach((el) => el.classList.add('is-visible'));
+      }
+
+      // Agendar: pestañas de los 4 pasos (teclado: ← → Inicio Fin). Sin JavaScript se ven los 4 paneles seguidos.
+      const flujo = document.querySelector('[data-flujo]');
+      if (flujo) {
+        const tabs = [...flujo.querySelectorAll('[role="tab"]')];
+        const mostrar = (tab, foco) => {
+          tabs.forEach((t) => {
+            const activo = t === tab;
+            t.setAttribute('aria-selected', String(activo));
+            t.tabIndex = activo ? 0 : -1;
+            document.getElementById(t.getAttribute('aria-controls')).hidden = !activo;
+          });
+          if (foco) tab.focus();
+        };
+        tabs.forEach((t, i) => {
+          t.addEventListener('click', () => mostrar(t));
+          t.addEventListener('keydown', (e) => {
+            const n = { ArrowRight: i + 1, ArrowLeft: i - 1, Home: 0, End: tabs.length - 1 }[e.key];
+            if (n === undefined) return;
+            e.preventDefault();
+            mostrar(tabs[(n + tabs.length) % tabs.length], true);
+          });
+        });
+        // "Siguiente paso" / "Volver": cambia de pestaña y sube al inicio del recuadro
+        flujo.addEventListener('click', (e) => {
+          const b = e.target.closest('[data-ir]');
+          if (!b) return;
+          mostrar(document.getElementById(b.dataset.ir));
+          flujo.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+        // Cualquier botón "Agendar" de la página lleva al paso 1
+        document.querySelectorAll('a[href="#agendar"]').forEach((a) => a.addEventListener('click', () => mostrar(tabs[0])));
+        mostrar(tabs[0]);
       }
 
       document.querySelector('[data-anio]').textContent = new Date().getFullYear();
