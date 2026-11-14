@@ -506,45 +506,7 @@ ol[role="list"] { list-style: none; margin: 0; padding: 0; }
 
 .tile-ancho p { font-size: 0.93rem; max-width: 760px; }
 
-/* ---------- Agendar: 4 pasos en pestañas, agenda incrustada ---------- */
-.flujo {
-  border: 1px solid var(--borde);
-  border-radius: var(--radio);
-  background: var(--superficie);
-  overflow: hidden;
-  scroll-margin-top: calc(var(--barra-h) + 16px);
-}
-
-.flujo-pasos { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-bottom: 1px solid var(--borde); }
-
-.flujo-paso {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 18px 20px;
-  border: 0;
-  border-right: 1px solid var(--borde);
-  background: transparent;
-  color: var(--texto-suave);
-  font: inherit;
-  text-align: left;
-  cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease;
-}
-
-.flujo-paso:last-child { border-right: 0; }
-.flujo-paso:hover,
-.flujo-paso[aria-selected="true"] { background: var(--superficie-2); color: var(--texto); }
-.flujo-paso[aria-selected="true"]::after { content: ""; position: absolute; inset: auto 0 -1px; height: 2px; background: var(--acento); }
-.flujo-paso .paso-icono { flex: none; width: 40px; height: 40px; border-radius: 10px; }
-.flujo-paso .paso-icono svg { width: 20px; height: 20px; }
-.flujo-num { display: block; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--acento); }
-.flujo-nombre { display: block; font-size: 0.98rem; line-height: 1.25; }
-
-.flujo-panel { padding: clamp(20px, 3vw, 36px); }
-.flujo-panel[hidden] { display: none; }
-.flujo-panel:focus-visible { outline: 2px solid var(--acento); outline-offset: -2px; }
+/* ---------- Agendar: ficha, agenda incrustada y qué pasa después ---------- */
 .flujo-texto h3 { margin-bottom: 10px; font-size: clamp(1.4rem, 2.4vw, 1.8rem); }
 .flujo-texto p { max-width: 760px; color: var(--texto-suave); }
 
@@ -558,10 +520,8 @@ ol[role="list"] { list-style: none; margin: 0; padding: 0; }
 
 .flujo-pie { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; margin-top: 24px; }
 .flujo-pie .enlace { margin-top: 0; }
-.flujo-pie-solo { justify-content: flex-end; }
-.flujo-botones { display: flex; flex-wrap: wrap; gap: 12px; }
 
-/* Paso 4: qué pasa con el enlace de Meet y el recordatorio */
+/* Qué pasa después de reservar */
 .flujo-lista { display: grid; gap: 14px; margin-top: 24px; max-width: 760px; }
 .flujo-lista li { display: flex; align-items: center; gap: 16px; color: var(--texto-suave); }
 .flujo-lista strong { color: var(--texto); font-weight: normal; }
@@ -803,15 +763,9 @@ ol[role="list"] { list-style: none; margin: 0; padding: 0; }
   .tile-num { margin-bottom: 18px; }
   .mosaico-4 > .tile > p { font-size: 1.2rem; }
 
-  /* Pasos de Agendar: 4 columnas angostas con ícono arriba y nombre corto */
-  .flujo-paso { flex-direction: column; justify-content: flex-start; gap: 8px; padding: 14px 4px 12px; text-align: center; }
-  .flujo-paso .paso-icono { width: 36px; height: 36px; }
-  .flujo-num { display: none; }
-  .flujo-nombre { font-size: 0.74rem; }
   .incrustado iframe { height: 760px; }
   .flujo-pie { flex-direction: column-reverse; align-items: stretch; }
   .flujo-pie .btn { width: 100%; }
-  .flujo-botones { flex-direction: column-reverse; }
 
   .tabla div { grid-template-columns: 1fr; gap: 4px; }
   .faq summary { font-size: 1.12rem; min-height: 64px; }
@@ -842,3 +796,65 @@ ol[role="list"] { list-style: none; margin: 0; padding: 0; }
   *, *::before, *::after { transition: none !important; animation: none !important; }
   [data-reveal] { opacity: 1; transform: none; }
 }
+
+/* === Versión de lanzamiento (14-11-2026) === */
+/* Ancho suficiente para que Google muestre la semana completa (en pantallas angostas Google muestra un día) */
+#agendar .incrustado { max-width: 1200px; margin-inline: auto; }
+#agendar .incrustado iframe { height: 860px; }
+@media (max-width: 720px) { #agendar .incrustado iframe { height: 660px; } }
+
+/* Ventanita de invitación (aparece a los 15 s, una vez por visita), con los colores del sitio */
+.aviso-flotante { position: fixed; left: 20px; bottom: 20px; z-index: 9000; width: min(340px, calc(100vw - 40px));
+  padding: 20px 22px 18px; border: 1px solid var(--borde-fuerte); border-left: 3px solid var(--acento); border-radius: 12px;
+  background: rgba(15, 22, 17, .96); color: var(--texto-suave); font-size: .95rem; line-height: 1.55;
+  box-shadow: 0 12px 32px rgba(0,0,0,.4); backdrop-filter: blur(6px);
+  opacity: 0; transform: translateY(10px); pointer-events: none; transition: opacity .4s ease, transform .4s ease; }
+.aviso-flotante.is-visible { opacity: 1; transform: none; pointer-events: auto; }
+.aviso-flotante .aviso-titulo { margin: 0 28px 6px 0; font-family: var(--font-serif); font-size: 1.2rem; color: var(--texto); }
+.aviso-flotante p { margin: 0; }
+/* Sección "Psicoterapia para adultos" */
+/* 2 x 2, tarjetas horizontales: número a la izquierda, título y texto a la derecha */
+#lo-que-te-trae .mosaico-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 1000px; margin-inline: auto; }
+#lo-que-te-trae .tile { display: grid; grid-template-columns: 44px 1fr; column-gap: 18px; align-items: start; padding: 28px 30px; }
+#lo-que-te-trae .tile-num { margin: 6px 0 0; font-size: .8rem; }
+#lo-que-te-trae .tile h3 { grid-column: 2; margin: 0 0 8px; font-size: 1.3rem; line-height: 1.25; color: var(--texto); }
+#lo-que-te-trae .tile > p { grid-column: 2; margin: 0; font-family: var(--font-sans); font-size: .98rem; line-height: 1.6; color: var(--texto-suave); }
+@media (max-width: 720px) {
+  #lo-que-te-trae .mosaico-4 { grid-template-columns: 1fr; }
+  #lo-que-te-trae .tile { grid-template-columns: 34px 1fr; padding: 22px; }
+  #lo-que-te-trae .tile > p { font-size: .95rem; }
+}
+.para-quien-cierre { max-width: 720px; margin: 56px auto 0; text-align: center; }
+.para-quien-cierre .frase { margin: 0 0 12px; font-size: clamp(1.3rem, 2vw, 1.6rem); line-height: 1.25; }
+.para-quien-cierre > p:not(.frase) { color: var(--texto-suave); }
+.para-quien-cierre .btn { margin-top: 28px; }
+.para-quien-datos { margin-top: 14px; font-size: .88rem; letter-spacing: .04em; color: var(--texto-tenue) !important; }
+
+/* Encuadre en 2 x 2 con la tarjeta nueva de atención online */
+#encuadre .mosaico-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 900px) { #encuadre .mosaico-3 { grid-template-columns: 1fr; } }
+#encuadre .tile a { color: var(--acento); }
+#encuadre .tile p { text-align: justify; hyphens: auto; -webkit-hyphens: auto; } /* guiones evitan huecos grandes entre palabras */
+.aviso-lista { margin: 10px 0 0; padding-left: 18px; display: grid; gap: 6px; font-size: .9rem; }
+.aviso-lista li::marker { color: var(--acento); }
+.aviso-lista a { color: var(--acento); }
+.aviso-acciones { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 18px; margin-top: 16px; }
+.aviso-acciones .enlace { margin-top: 0; font-size: .85rem; }
+@media (max-width: 720px) { .aviso-condiciones { max-height: calc(100vh - 120px); overflow-y: auto; } }
+
+.aviso-wa { display: block; color: inherit; text-decoration: none; }
+.aviso-flotante .enlace { margin-top: 12px; gap: 8px; }
+.aviso-wa:hover .enlace svg:last-child { transform: translateX(4px); }
+.aviso-logo-wa { width: 18px !important; height: 18px !important; fill: currentColor; }
+/* Barra del celular: queda solo "Agendar" */
+@media (max-width: 720px) { .barra-movil { grid-template-columns: 1fr; } }
+.aviso-cerrar { position: absolute; top: 12px; right: 12px; display: grid; place-items: center; width: 28px; height: 28px;
+  border: 1px solid transparent; border-radius: 50%; background: transparent; color: var(--texto-tenue); cursor: pointer; }
+.aviso-cerrar:hover { border-color: var(--borde-fuerte); color: var(--texto); }
+.aviso-cerrar svg { width: 12px; height: 12px; stroke: currentColor; stroke-width: 1.6; fill: none; }
+@media (max-width: 720px) { .aviso-flotante { left: 16px; bottom: 88px; } } /* sobre la barra fija del celular */
+@media (prefers-reduced-motion: reduce) { .aviso-flotante { transition: none; } }
+
+
+/* Agendar: subtítulos de cada paso */
+.agendar-sub { margin-top: 40px; }
